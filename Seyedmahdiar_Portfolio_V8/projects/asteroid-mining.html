@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Optimization of asteroid mineral-extraction scenarios while accounting for time-varying inertia and rotational dynamics using Particle Swarm Optimization." name="description"/>
+<title>Asteroid Mining Optimization | Seyedmahdiar Ziaolhagh</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/asteroid-mining.css" rel="stylesheet"/>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/><link href="../assets/css/v8.css" rel="stylesheet"/><meta content="#0b2035" name="theme-color"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="Asteroid Mining Optimization | Seyedmahdiar Ziaolhagh" property="og:title"/><meta content="Optimization of asteroid mineral-extraction scenarios while accounting for time-varying inertia and rotational dynamics using Particle Swarm Optimization." property="og:description"/><meta content="website" property="og:type"/><meta content="../assets/images/social-preview.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Asteroid Mining Optimization | Seyedmahdiar Ziaolhagh" name="twitter:title"/><meta content="Optimization of asteroid mineral-extraction scenarios while accounting for time-varying inertia and rotational dynamics using Particle Swarm Optimization." name="twitter:description"/><meta content="../assets/images/social-preview.jpg" name="twitter:image"/></head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="../index.html">Seyedmahdiar Ziaolhagh</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span></button>
+<nav aria-label="Primary navigation" class="main-nav">
+<a href="../index.html">Home</a>
+<a href="cryostat.html">Cryostat</a>
+<a href="surface-profiler.html">Surface Profiler</a>
+<a href="young-modulus.html">Young's Modulus</a>
+<a class="active" href="#top">Asteroid Mining</a>
+<a href="undergraduate-projects.html">Undergraduate Archive</a>
+<a href="../pages/research.html">Research</a>
+<a href="../pages/resume.html">Resume</a>
+<a href="../pages/about.html">About</a>
+<a href="../pages/contact.html">Contact</a>
+</nav>
+<a class="back-link" href="../index.html#selected-work">Projects ↗</a>
+</header>
+<main id="main-content">
+<section class="hero asteroid-hero">
+<div class="hero-copy">
+<p class="eyebrow">Asteroid engineering · Rotational dynamics · Optimization</p>
+<h1>Asteroid Mining<br/>Optimization</h1>
+<p class="hero-subtitle">A physics-based extraction-planning framework that uses Particle Swarm Optimization to preserve the rotational stability of asteroid Bennu during large-scale material removal.</p>
+<div class="tag-row"><span>Particle Swarm Optimization</span><span>Euler dynamics</span><span>Python</span><span>Bennu</span></div>
+<div class="hero-actions"><a class="primary-button" href="#results">View results</a><a class="text-link" href="#publication">Open publication →</a></div>
+</div>
+<figure class="hero-image lightbox-trigger" tabindex="0">
+<img alt="Cube-based numerical model of asteroid Bennu used for inertia and rotational-dynamics calculations" decoding="async" fetchpriority="high" height="656" src="../assets/images/asteroid-mining/bennu-cube-model.webp" width="696"/>
+<figcaption>Discrete cube model of Bennu used to update mass properties during stepwise extraction.</figcaption>
+</figure>
+</section>
+<section aria-label="Project facts" class="metric-strip">
+<div><strong>30% / 70%</strong><span>mass-removal scenarios</span></div>
+<div><strong>3</strong><span>PSO swarm sizes tested</span></div>
+<div><strong>6</strong><span>inertia-tensor components tracked</span></div>
+<div><strong>IEEE Access</strong><span>peer-reviewed publication</span></div>
+</section>
+<section class="section problem-grid">
+<div><p class="section-label">Engineering problem</p><h2>Mining changes the body being mined.</h2></div>
+<div class="prose"><p>Removing material from an irregular small body changes its mass distribution and inertia tensor. Even without an applied external torque, those changes can alter angular velocity, complicate spacecraft proximity operations, and increase structural and mission risk.</p><p>I developed a computational framework that identifies extraction locations and sequences that minimize rotational disturbance while preserving a physically feasible surface-to-core removal process.</p></div>
+</section>
+<section class="section sample-section">
+<div class="section-heading"><div><p class="section-label">Numerical model</p><h2>A changing-inertia representation of Bennu</h2></div><p>The OSIRIS-REx shape model was discretized into small cubes. Each cube carries mass and position information, allowing the complete inertia tensor to be recalculated after every removal step.</p></div>
+<figure class="model-figure lightbox-trigger" tabindex="0"><img alt="Three-dimensional cube discretization of asteroid Bennu" decoding="async" height="656" loading="lazy" src="../assets/images/asteroid-mining/bennu-cube-model.webp" width="696"/><figcaption>The cube-based geometry provides the mass-property foundation for the dynamic simulation.</figcaption></figure>
+<div aria-label="Computational workflow" class="workflow">
+<div class="flow-node"><b>Import shape model</b><small>OSIRIS-REx Bennu geometry</small></div><span>→</span>
+<div class="flow-node"><b>Voxelize asteroid</b><small>Mass and position for each cube</small></div><span>→</span>
+<div class="flow-node accent"><b>Update inertia</b><small>After each extraction step</small></div><span>→</span>
+<div class="flow-node"><b>Solve dynamics</b><small>Euler equations</small></div><span>→</span>
+<div class="flow-node"><b>Optimize removal</b><small>PSO-selected sites</small></div>
+</div>
+</section>
+<section class="section methods-section">
+<div class="section-heading"><div><p class="section-label">Rotational dynamics</p><h2>Time-varying inertia governs the response</h2></div><p>The body-fixed Euler equation is solved while the asteroid inertia tensor changes discretely as material is removed.</p></div>
+<div aria-label="Time derivative of inertia tensor times angular velocity plus angular velocity cross inertia tensor times angular velocity equals applied moment" class="math-panel" role="img">
+<span>d/dt [ I(t)ω ] + ω × I(t)ω = M</span>
+<span class="caption">The study evaluates the torque-free case, M = 0, to isolate the rotational consequences of mass redistribution.</span>
+</div>
+<div class="finding-grid">
+<article><b>State variable</b><p>Angular velocity is propagated through time after each mass-removal update.</p></article>
+<article><b>Mass properties</b><p>Principal and off-diagonal inertia terms are recomputed from the remaining cubes.</p></article>
+<article><b>Validation</b><p>Energy and angular momentum conservation are monitored to assess numerical consistency.</p></article>
+</div>
+</section>
+<section class="section workflow-section">
+<div class="section-heading"><div><p class="section-label">Optimization formulation</p><h2>PSO selects low-disturbance extraction sites</h2></div><p>The objective is to minimize the mean-squared deviation between the initial and simulated angular-velocity magnitudes over the extraction sequence.</p></div>
+<div aria-label="Mean squared error equals one over n times the sum of angular velocity minus initial angular velocity squared" class="math-panel" role="img">
+<span>MSE = (1/n) Σ [ ω(i) − ω̂(i) ]²</span>
+<span class="caption">Lower fitness represents an extraction plan that more closely preserves the original rotational state.</span>
+</div>
+<div class="pipeline">
+<li><span>01</span><b>Initialize swarm</b><small>Candidate removal solutions are generated for the available surface set.</small></li>
+<li><span>02</span><b>Evaluate fitness</b><small>Each candidate updates inertia and runs the rotational simulation.</small></li>
+<li><span>03</span><b>Update personal best</b><small>Each particle retains its strongest extraction solution.</small></li>
+<li><span>04</span><b>Update global best</b><small>The swarm shares the best low-error solution found.</small></li>
+<li><span>05</span><b>Advance particles</b><small>Velocity and position are updated using cognitive and social terms.</small></li>
+<li><span>06</span><b>Return sequence</b><small>The final solution defines the optimized excavation pattern.</small></li>
+</div>
+</section>
+<section class="section results" id="results">
+<div class="section-heading"><div><p class="section-label">Scenario geometry</p><h2>Optimized extraction remains distributed and dynamically selective</h2></div><p>The 30% and 70% cases reveal how the optimizer distributes removal sites while respecting the progressive surface-to-core constraint.</p></div>
+<div class="scenario-grid">
+<figure class="lightbox-trigger" tabindex="0"><img alt="Front, side, top, and isometric views of the asteroid after optimized 30 percent mass removal" decoding="async" height="746" loading="lazy" src="../assets/images/asteroid-mining/scenario-30-shape.webp" width="804"/><figcaption><b>Scenario 1.</b> Optimized 30% mass-removal pattern.</figcaption></figure>
+<figure class="lightbox-trigger" tabindex="0"><img alt="Front, side, top, and isometric views of the asteroid after optimized 70 percent mass removal" decoding="async" height="808" loading="lazy" src="../assets/images/asteroid-mining/scenario-70-shape.webp" width="848"/><figcaption><b>Scenario 2.</b> Optimized 70% mass-removal pattern.</figcaption></figure>
+</div>
+<div class="interpretation"><p class="section-label">Site-selection insight</p><p>The optimized sites remain broadly distributed, particularly along the z direction, while avoiding excessive concentration at the polar regions. This symmetry helps preserve the asteroid's rotational behaviour as the available mass decreases.</p></div>
+</section>
+<section class="section comparison-section">
+<div class="section-heading"><div><p class="section-label">PSO performance</p><h2>Swarm size changes convergence speed more than final solution quality</h2></div><p>Swarm sizes of 50, 100, and 200 particles all approached low fitness, while the largest swarm converged in substantially fewer iterations.</p></div>
+<figure class="single-result lightbox-trigger" tabindex="0"><img alt="PSO best-fitness convergence for 30 and 70 percent extraction scenarios using swarm sizes 50, 100, and 200" decoding="async" height="1242" loading="lazy" src="../assets/images/asteroid-mining/pso-convergence.webp" width="880"/><figcaption>Fitness convergence for the two extraction fractions across three PSO swarm sizes.</figcaption></figure>
+</section>
+<section class="section results">
+<div class="section-heading"><div><p class="section-label">Dynamic comparison</p><h2>Optimization suppresses rotational disturbance</h2></div><p>Random removal produces sustained oscillatory residuals, whereas the optimized solutions remain nearly flat and centred near zero.</p></div>
+<div class="result-pair">
+<figure class="lightbox-trigger" tabindex="0"><img alt="Residual angular velocity components for random and optimized 30 percent extraction" decoding="async" height="720" loading="lazy" src="../assets/images/asteroid-mining/residual-angular-velocity-30.webp" width="842"/><figcaption><b>30% removal.</b> Random and optimized angular-velocity residuals.</figcaption></figure>
+<figure class="lightbox-trigger" tabindex="0"><img alt="Residual angular velocity components for random and optimized 70 percent extraction" decoding="async" height="732" loading="lazy" src="../assets/images/asteroid-mining/residual-angular-velocity-70.webp" width="876"/><figcaption><b>70% removal.</b> The contrast becomes more pronounced at higher extraction fraction.</figcaption></figure>
+</div>
+<figure class="single-result lightbox-trigger" tabindex="0"><img alt="Magnitude of residual angular velocity for random and optimized 30 and 70 percent extraction" decoding="async" height="1002" loading="lazy" src="../assets/images/asteroid-mining/residual-norms.webp" width="882"/><figcaption>Residual angular-velocity norms show optimized extraction several orders of magnitude below random removal.</figcaption></figure>
+<div class="validation-row">
+<div><strong>Near-zero residuals</strong><span>optimized angular-velocity components</span></div>
+<div><strong>30% and 70%</strong><span>stable solutions at both extraction fractions</span></div>
+<div><strong>Lower control burden</strong><span>reduced need for active rotational correction</span></div>
+</div>
+</section>
+<section class="section uncertainty-section">
+<div class="section-heading"><div><p class="section-label">Mass-property evolution</p><h2>The inertia tensor records how excavation reshapes the body</h2></div><p>Principal moments decrease as mass is removed, while off-diagonal terms reveal scenario-dependent changes in mass asymmetry.</p></div>
+<figure class="single-result lightbox-trigger" tabindex="0"><img alt="Evolution of the six inertia tensor components for 30 and 70 percent optimized extraction scenarios" decoding="async" height="802" loading="lazy" src="../assets/images/asteroid-mining/inertia-tensor.webp" width="856"/><figcaption>Time history of principal and product-of-inertia terms for both extraction fractions.</figcaption></figure>
+<div class="finding-grid">
+<article><b>Principal moments</b><p>Ixx, Iyy, and Izz decrease stepwise as the remaining asteroid mass declines.</p></article>
+<article><b>Cross terms</b><p>Ixy, Ixz, and Iyz reflect the changing asymmetry introduced by site selection.</p></article>
+<article><b>Numerical integrity</b><p>Energy and angular momentum remain effectively conserved under the torque-free simulation assumptions.</p></article>
+</div>
+</section>
+<section class="section contribution-section">
+<div class="contribution-grid">
+<div><p class="section-label">My contribution</p><h2>Complete research and computational ownership</h2><p>I completed the full project workflow, from problem definition and dynamic modelling through optimization, simulation, visualization, interpretation, and publication preparation.</p></div>
+<ul class="contribution-list">
+<li>Defined the asteroid-mining dynamics and optimization problem</li>
+<li>Developed the cube-based Bennu representation in Python</li>
+<li>Implemented inertia-tensor calculation and stepwise mass removal</li>
+<li>Solved Euler's rotational equations with time-varying mass properties</li>
+<li>Implemented Particle Swarm Optimization for extraction-site selection</li>
+<li>Designed and compared 30% and 70% removal scenarios</li>
+<li>Evaluated convergence, angular-velocity residuals, inertia, energy, and angular momentum</li>
+<li>Produced the figures, interpreted the results, and prepared the IEEE Access paper</li>
+</ul>
+</div>
+<div class="tools"><p class="section-label">Tools and methods</p><div class="tag-row"><span>Python</span><span>Particle Swarm Optimization</span><span>NumPy</span><span>SciPy</span><span>PyVista</span><span>Matplotlib</span><span>Euler equations</span><span>Rigid-body dynamics</span><span>Numerical simulation</span></div></div>
+</section>
+<section class="section downloads-section" id="publication">
+<div><p class="section-label">Publication</p><h2>Peer-reviewed research in IEEE Access</h2></div>
+<div class="publication-box">
+<div><strong>Mineral Extraction Scenarios From an Asteroid via Optimization Considering Rotational Dynamics</strong><p>S. Ziaolhagh and M. Jafari-Nadoushan · IEEE Access, Volume 13, 2025</p><p>DOI: 10.1109/ACCESS.2025.3615449</p></div>
+<div class="publication-actions"><a class="primary-button" href="https://ieeexplore.ieee.org/abstract/document/11184103" rel="noopener noreferrer" target="_blank">IEEE Xplore ↗</a><a class="text-link" href="../assets/documents/asteroid-mining/asteroid-mining-paper.pdf" rel="noopener" target="_blank">Open PDF ↗</a></div>
+</div>
+</section>
+</main>
+<footer>
+<div><strong>Seyedmahdiar Ziaolhagh</strong><span>Aerospace Engineering · Instrumentation</span></div>
+<div><a href="mailto:ziaolhagh@uleth.ca">Email</a><a href="https://www.linkedin.com/in/seyedmahdiar-ziaolhagh-1008a6b5/" rel="noopener noreferrer" target="_blank">LinkedIn</a></div>
+<div><span>Lethbridge, AB, Canada</span><a href="#top">Back to top ↑</a></div>
+</footer>
+<div class="lightbox" hidden=""><button aria-label="Close image" type="button">×</button><img alt="" decoding="async" loading="lazy"/><p></p></div>
+<script src="../assets/js/asteroid-mining.js"></script>
+</body>
+</html>

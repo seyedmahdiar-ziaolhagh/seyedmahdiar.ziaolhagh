@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Automated two-axis interferometric surface profiling and computational stitching using a PhaseCam 4030, stepper-driven stages, and Python." name="description"/>
+<title>Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh</title>
+<link href="../assets/css/surface-profiler.css" rel="stylesheet"/>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/><link href="../assets/css/v8.css" rel="stylesheet"/><meta content="#0b2035" name="theme-color"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh" property="og:title"/><meta content="Automated two-axis interferometric surface profiling and computational stitching using a PhaseCam 4030, stepper-driven stages, and Python." property="og:description"/><meta content="website" property="og:type"/><meta content="../assets/images/social-preview.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh" name="twitter:title"/><meta content="Automated two-axis interferometric surface profiling and computational stitching using a PhaseCam 4030, stepper-driven stages, and Python." name="twitter:description"/><meta content="../assets/images/social-preview.jpg" name="twitter:image"/></head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<a aria-label="Portfolio home" class="brand" href="../index.html">Seyedmahdiar Ziaolhagh</a>
+<button aria-controls="site-nav" aria-expanded="false" class="menu-button" type="button">Menu</button>
+<nav aria-label="Primary navigation" id="site-nav">
+<a href="../index.html">Home</a>
+<a href="cryostat.html">Cryostat</a>
+<a href="young-modulus.html">Young's Modulus</a>
+<a href="asteroid-mining.html">Asteroid Mining</a>
+<a href="#results">Results</a>
+<a href="undergraduate-projects.html">Undergraduate Archive</a>
+<a href="../pages/research.html">Research</a>
+<a href="../pages/resume.html">Resume</a>
+<a href="../pages/about.html">About</a>
+<a href="../pages/contact.html">Contact</a>
+</nav>
+<a class="back-link" href="../index.html#selected-work">Projects ↗</a>
+</header>
+<main id="main-content">
+<section class="hero" id="top">
+<div class="hero-copy">
+<p class="eyebrow">Optical metrology · Automation · Scientific computing</p>
+<h1>Interferometric<br/>Surface Profiler</h1>
+<p class="hero-subtitle">Automated multi-axis scanning and computational reconstruction of optical surfaces larger than a single interferometer field of view.</p>
+<div class="tag-row"><span>PhaseCam 4030</span><span>Python</span><span>Motion control</span><span>Surface stitching</span></div>
+<div class="hero-actions"><a class="primary-button" href="#results">View reconstruction</a><a class="text-link" href="#system">Explore the system →</a></div>
+</div>
+<figure class="hero-image">
+<img alt="PhaseCam 4030 facing a mirror mounted on a two-axis stepper-driven translation system" decoding="async" fetchpriority="high" height="1280" src="../assets/images/surface-profiler/setup-wide.webp" width="960"/>
+<figcaption>Two-axis motion platform aligned with the PhaseCam 4030.</figcaption>
+</figure>
+</section>
+<section aria-label="Project facts" class="metric-strip">
+<div><strong>14</strong><span>surface tiles</span></div>
+<div><strong>2 × 7</strong><span>scan layout</span></div>
+<div><strong>6.949 mm</strong><span>single-tile field of view</span></div>
+<div><strong>3.44 µm</strong><span>pixel spacing</span></div>
+</section>
+<section class="section intro-grid" id="overview">
+<div><p class="section-label">Overview</p><h2>Extending a limited field of view</h2></div>
+<div class="prose"><p>The PhaseCam can resolve local surface form with high spatial density, but its field of view is smaller than the mirror. I developed a translation platform and a Python reconstruction workflow that acquire overlapping surface maps, determine their relative alignment, correct tile-to-tile offsets, and combine them into a continuous aperture map.</p><p>The system uses independent horizontal and vertical stages. The mirror moves while the interferometer remains fixed, preserving the optical measurement geometry during the scan.</p></div>
+</section>
+<section class="section problem-panel">
+<div class="problem-copy"><p class="section-label">Engineering problem</p><h2>One measurement cannot cover the complete optic.</h2><p>Each acquisition captures only a local patch. The useful full-aperture result depends on repeatable motion, controlled overlap, robust registration, and blending that does not introduce artificial seams.</p></div>
+<div aria-label="Diagram showing a small interferometer field of view moving across a larger mirror" class="fov-diagram" role="img">
+<span class="mirror-label">Optical surface</span>
+<div class="mirror-outline">
+<div class="tile tile-a">Tile</div><div class="tile tile-b"></div><div class="tile tile-c"></div>
+</div>
+<div class="dimension">single FOV: 6.949 mm</div>
+</div>
+</section>
+<section class="section" id="system">
+<div class="section-heading"><div><p class="section-label">Experimental system</p><h2>Hardware architecture</h2></div><p>A fixed interferometer observes a mirror translated in X and Z by stepper-driven linear stages.</p></div>
+<div aria-label="System architecture flow diagram" class="architecture">
+<div class="arch-node"><b>PhaseCam 4030</b><small>Interferometric acquisition</small></div><div class="arrow">→</div>
+<div class="arch-node accent"><b>Mirror mount</b><small>Optic under test</small></div><div class="split"><span>↙</span><span>↘</span></div>
+<div class="arch-node"><b>X stage</b><small>Horizontal scan</small></div><div class="arch-node"><b>Z stage</b><small>Row change</small></div>
+<div class="merge"><span>↘</span><span>↙</span></div><div class="arch-node wide"><b>Stepper drivers + microcontroller</b><small>Repeatable stage motion and settling sequence</small></div>
+</div>
+<div class="photo-grid">
+<figure class="photo-large"><img alt="Front view of the complete motion platform and interferometer" decoding="async" height="1280" loading="lazy" src="../assets/images/surface-profiler/setup-front.webp" width="960"/><figcaption>Complete instrument layout.</figcaption></figure>
+<figure><img alt="Close view of the mirror mount in front of the interferometer" decoding="async" height="1280" loading="lazy" src="../assets/images/surface-profiler/mirror-mount.webp" width="960"/><figcaption>Mirror holder and optical interface.</figcaption></figure>
+<figure><img alt="Top view showing the translation stages, controller and PhaseCam" decoding="async" height="1280" loading="lazy" src="../assets/images/surface-profiler/setup-top.webp" width="960"/><figcaption>Top view of motion and control hardware.</figcaption></figure>
+</div>
+</section>
+<section class="section scan-section">
+<div class="section-heading"><div><p class="section-label">Acquisition strategy</p><h2>Fourteen overlapping measurements</h2></div><p>Seven tiles are acquired along each row. Row 2 is positioned above Row 1, with nominal 30% overlap between adjacent fields.</p></div>
+<div aria-label="Two-row seven-column tile acquisition layout" class="scan-layout">
+<div class="axis-z">Z ↑</div>
+<div class="row-name">Row 2</div><div class="tiles" data-row="2"></div>
+<div class="row-name">Row 1</div><div class="tiles" data-row="1"></div>
+<div class="axis-x">X scan direction →</div>
+</div>
+<div class="video-wrap"><video controls="" playsinline="" poster="../assets/images/surface-profiler/setup-side.webp" preload="metadata"><source src="../assets/videos/surface-profiler/scan-motion.mp4" type="video/mp4"/>Your browser does not support embedded video.</video><div><p class="section-label">Motion demonstration</p><h3>Stage movement during acquisition</h3><p>The stage advances by a calibrated increment, pauses for mechanical settling, and then allows the next surface map to be acquired.</p></div></div>
+</section>
+<section class="section" id="pipeline">
+<div class="section-heading"><div><p class="section-label">Computational methods</p><h2>From XYZ files to a continuous surface</h2></div><p>The reconstruction separates geometric placement from surface-height correction so that errors can be diagnosed at each stage.</p></div>
+<ol class="pipeline">
+<li><span>01</span><b>Load XYZ tiles</b><small>Reconstruct each 2020 × 2020 grid and preserve invalid pixels.</small></li>
+<li><span>02</span><b>Reference removal</b><small>Remove piston and tilt before comparing local surface structure.</small></li>
+<li><span>03</span><b>Overlap extraction</b><small>Select common valid regions using the expected stage displacement.</small></li>
+<li><span>04</span><b>Registration</b><small>Refine relative X–Z placement through normalized cross-correlation.</small></li>
+<li><span>05</span><b>Offset solution</b><small>Estimate tile and row height corrections from shared regions.</small></li>
+<li><span>06</span><b>Weighted blending</b><small>Taper overlap contributions to avoid abrupt seams.</small></li>
+<li><span>07</span><b>Surface reconstruction</b><small>Generate 2D, 3D, profile, and validation outputs.</small></li>
+</ol>
+</section>
+<section class="section registration-section">
+<div class="section-heading"><div><p class="section-label">Registration</p><h2>Alignment is inferred from shared surface structure</h2></div><p>Stage motion supplies the initial placement. Image registration then searches for the relative shift that maximizes similarity within the overlap.</p></div>
+<div class="registration-demo">
+<div class="reg-card"><h3>Before</h3><div class="reg-plane before"><span>A</span><span>B</span></div><p>Nominal stage position can leave a small lateral mismatch.</p></div>
+<div class="reg-arrow">→</div>
+<div class="reg-card"><h3>After</h3><div class="reg-plane after"><span>A</span><span>B</span><i>overlap</i></div><p>Cross-correlation refines the shift before height offsets are solved.</p></div>
+</div>
+<div class="validation-row">
+<div><strong>0.988</strong><span>row-to-row correlation</span></div>
+<div><strong>4.392 nm</strong><span>RMS difference between row cores</span></div>
+<div><strong>2.146 nm</strong><span>row–column interaction RMS</span></div>
+</div>
+<p class="fine-print">Validation values are from the tile-core row comparison performed during reconstruction; they characterize consistency between the two acquired rows, not the absolute accuracy of the interferometer.</p>
+</section>
+<section class="section results" id="results">
+<div class="section-heading"><div><p class="section-label">Reconstruction</p><h2>Full stitched surface</h2></div><p>The result spans approximately 36 mm in X and 12 mm in Z. Height is shown in micrometres and includes the measured low-order surface form after tile stitching.</p></div>
+<figure class="result-wide lightbox-trigger" tabindex="0"><img alt="Two-dimensional stitched surface-height map over approximately 36 by 12 millimetres" decoding="async" height="798" loading="lazy" src="../assets/images/surface-profiler/stitched-surface-2d.webp" width="2048"/><figcaption><b>2D surface map.</b> Continuous full-aperture visualization with a shared height scale.</figcaption></figure>
+<figure class="result-wide lightbox-trigger" tabindex="0"><img alt="Three-dimensional rendering of the stitched mirror surface" decoding="async" height="1653" loading="lazy" src="../assets/images/surface-profiler/stitched-surface-3d.webp" width="2048"/><figcaption><b>3D surface reconstruction.</b> The broad low-order curvature is visible across both scan directions.</figcaption></figure>
+<aside class="interpretation"><p class="section-label">Interpretation</p><p>The large micrometre-scale bowl visible here should not be interpreted directly as surface roughness. It contains low-order form, reference alignment, and possible systematic contributions. Roughness or flatness reporting requires a clearly defined aperture, reference subtraction, filtering convention, and uncertainty analysis.</p></aside>
+</section>
+<section class="section" id="contribution">
+<div class="contribution-grid">
+<div><p class="section-label">My contribution</p><h2>Designed the measurement system and reconstruction workflow</h2><p>I combined mechanical integration, stage calibration, automated motion, interferometric acquisition, and scientific programming into one end-to-end metrology platform.</p></div>
+<ul class="contribution-list">
+<li>Integrated two orthogonal stepper-driven translation stages with the optical setup.</li>
+<li>Defined the 2 × 7 scan sequence, overlap, settling, and data-organization strategy.</li>
+<li>Developed Python tools for loading, detrending, registering, offset-correcting, and blending surface tiles.</li>
+<li>Diagnosed missing pixels, overlap errors, row consistency, and stage-displacement uncertainty.</li>
+<li>Generated full-aperture 2D and 3D reconstructions for interpretation and reporting.</li>
+</ul>
+</div>
+<div class="tools"><span>Python</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span><span>Arduino</span><span>PhaseCam 4030</span><span>4Sight Focus</span><span>Interferometry</span></div>
+</section>
+<section class="section gallery-section">
+<div class="section-heading"><div><p class="section-label">Gallery</p><h2>Experimental details</h2></div><p>Additional views of the motion structure, interferometer alignment, and electronics.</p></div>
+<div class="gallery">
+<figure class="lightbox-trigger" tabindex="0"><img alt="Side view of vertical and horizontal stages" decoding="async" height="1280" loading="lazy" src="../assets/images/surface-profiler/setup-side.webp" width="960"/><figcaption>Orthogonal stage assembly.</figcaption></figure>
+<figure class="lightbox-trigger" tabindex="0"><img alt="Wide view including PhaseCam and motor control electronics" decoding="async" height="1280" loading="lazy" src="../assets/images/surface-profiler/setup-wide.webp" width="960"/><figcaption>Instrument and controller.</figcaption></figure>
+<figure class="lightbox-trigger" tabindex="0"><img alt="Mirror mount close-up" decoding="async" height="1280" loading="lazy" src="../assets/images/surface-profiler/mirror-mount.webp" width="960"/><figcaption>Mirror mounting interface.</figcaption></figure>
+</div>
+</section>
+</main>
+<footer><div><strong>Seyedmahdiar Ziaolhagh</strong><span>Aerospace Engineering · Instrumentation</span></div><a href="mailto:ziaolhagh@uleth.ca">ziaolhagh@uleth.ca</a><span>Lethbridge, AB, Canada</span></footer>
+<div class="lightbox" hidden=""><button aria-label="Close enlarged image" type="button">×</button><img alt="" decoding="async" loading="lazy"/><p></p></div>
+<script src="../assets/js/surface-profiler.js"></script>
+</body>
+</html>

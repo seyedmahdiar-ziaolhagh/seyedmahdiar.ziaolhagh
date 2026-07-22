@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Room-temperature validation of a vibration-based Young's modulus measurement method for CFRP and reference materials using non-contact sensing, FFT analysis, and uncertainty propagation." name="description"/>
+<title>Vibration-Based Young's Modulus Characterization | Seyedmahdiar Ziaolhagh</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/young-modulus.css" rel="stylesheet"/>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/><link href="../assets/css/v8.css" rel="stylesheet"/><meta content="#0b2035" name="theme-color"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="Vibration-Based Young's Modulus Characterization | Seyedmahdiar Ziaolhagh" property="og:title"/><meta content="Room-temperature validation of a vibration-based Young's modulus measurement method for CFRP and reference materials using non-contact sensing, FFT analysis, and uncertainty propagation." property="og:description"/><meta content="website" property="og:type"/><meta content="../assets/images/social-preview.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Vibration-Based Young's Modulus Characterization | Seyedmahdiar Ziaolhagh" name="twitter:title"/><meta content="Room-temperature validation of a vibration-based Young's modulus measurement method for CFRP and reference materials using non-contact sensing, FFT analysis, and uncertainty propagation." name="twitter:description"/><meta content="../assets/images/social-preview.jpg" name="twitter:image"/></head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="../index.html">Seyedmahdiar Ziaolhagh</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span></button>
+<nav aria-label="Primary navigation" class="main-nav">
+<a href="../index.html">Home</a>
+<a href="cryostat.html">Cryostat</a>
+<a href="surface-profiler.html">Surface Profiler</a>
+<a class="active" href="#top">Young's Modulus</a>
+<a href="asteroid-mining.html">Asteroid Mining</a>
+<a href="undergraduate-projects.html">Undergraduate Archive</a>
+<a href="../pages/research.html">Research</a>
+<a href="../pages/resume.html">Resume</a>
+<a href="../pages/about.html">About</a>
+<a href="../pages/contact.html">Contact</a>
+</nav>
+<a class="back-link" href="../index.html#selected-work">Projects ↗</a>
+</header>
+<main id="main-content">
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow">Experimental mechanics · Signal processing · Materials characterization</p>
+<h1>Vibration-Based<br/>Young's Modulus<br/>Characterization</h1>
+<p class="hero-subtitle">Development and room-temperature validation of a non-contact modal-analysis method for CFRP and reference materials prior to cryogenic testing.</p>
+<div class="tag-row"><span>Modal analysis</span><span>FFT + sinc fitting</span><span>Monte Carlo</span><span>CFRP</span></div>
+<div class="hero-actions"><a class="primary-button" href="#results">View results</a><a class="text-link" href="#method">Explore the method →</a></div>
+</div>
+<figure class="hero-image lightbox-trigger" tabindex="0">
+<img alt="Cantilever vibration experiment with oscilloscope, magnetic pickup sensor, fixture, and aluminum specimen" decoding="async" fetchpriority="high" height="1280" src="../assets/images/young-modulus/setup-wide.webp" width="960"/>
+<figcaption>Room-temperature cantilever test system and non-contact vibration acquisition setup.</figcaption>
+</figure>
+</section>
+<section aria-label="Project facts" class="metric-strip">
+<div><strong>5</strong><span>materials characterized</span></div>
+<div><strong>2</strong><span>independent methods</span></div>
+<div><strong>3</strong><span>beam lengths per material</span></div>
+<div><strong>10×</strong><span>repeated trials per loaded case</span></div>
+</section>
+<section class="section intro-grid" id="overview">
+<div><p class="section-label">Research motivation</p><h2>Validate the method before moving into a cryostat.</h2></div>
+<div class="prose"><p>The target material was carbon-fibre-reinforced polymer, selected for future characterization under cryogenic conditions. Before transferring the experiment into a 4 K environment, I built and validated the complete room-temperature measurement framework using four reference materials with known elastic behaviour.</p><p>The project connects directly to the three-stage cryostat: this study establishes the sensing, excitation, frequency extraction, beam-theory inversion, and uncertainty methodology needed for later temperature-dependent CFRP measurements.</p></div>
+</section>
+<section class="section sample-section">
+<div class="section-heading"><div><p class="section-label">Test matrix</p><h2>Reference materials and the CFRP target</h2></div><p>Aluminum, copper, brass, and stainless steel provided known baselines. CFRP-SP1 established the room-temperature composite reference point.</p></div>
+<figure class="sample-photo lightbox-trigger" tabindex="0"><img alt="Five cantilever specimens made of stainless steel, CFRP, brass, copper, and aluminum" decoding="async" height="1280" loading="lazy" src="../assets/images/young-modulus/material-samples.webp" width="960"/><figcaption>Material specimens used to validate the experimental framework.</figcaption></figure>
+<div class="material-list"><span>Aluminum</span><span>Copper</span><span>Brass</span><span>Stainless steel</span><span>CFRP-SP1</span></div>
+</section>
+<section class="section" id="apparatus">
+<div class="section-heading"><div><p class="section-label">Experimental apparatus</p><h2>A non-contact vibration measurement system</h2></div><p>The specimen is clamped as a cantilever, mechanically excited, and observed through a magnetic pickup connected to an oscilloscope.</p></div>
+<div class="apparatus-grid">
+<figure class="lightbox-trigger" tabindex="0"><img alt="Close view of cantilever specimen, magnetic pickup sensor, clamp, and oscilloscope displaying a damped vibration" decoding="async" height="2048" loading="lazy" src="../assets/images/young-modulus/setup-close.webp" width="1535"/><figcaption>Measured free-decay response following mechanical excitation.</figcaption></figure>
+<div class="apparatus-copy">
+<ol>
+<li><b>Clamp the specimen</b><span>One end is fixed while the free length is set for each test configuration.</span></li>
+<li><b>Excite flexural motion</b><span>A repeatable impact or release initiates the fundamental bending response.</span></li>
+<li><b>Sense without contact</b><span>Motion changes magnetic flux through the pickup coil and induces a voltage.</span></li>
+<li><b>Acquire the decay</b><span>The oscilloscope records the voltage-time response for computational analysis.</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="section design-section">
+<div class="section-heading"><div><p class="section-label">Mechanical design</p><h2>Custom fixture for repeatable sample positioning</h2></div><p>I designed the fixture, specimen interface, and pickup arrangement to support interchangeable samples and consistent measurement geometry.</p></div>
+<div class="design-grid">
+<figure class="lightbox-trigger" tabindex="0"><img alt="SolidWorks CAD rendering of the cantilever beam fixture and CFRP specimen" decoding="async" height="760" loading="lazy" src="../assets/images/young-modulus/fixture-cad.webp" width="652"/><figcaption>SolidWorks assembly showing the base, support structure, sensor mount, and specimen.</figcaption></figure>
+<figure class="lightbox-trigger drawing" tabindex="0"><img alt="Dimensioned engineering drawing of the cantilever test fixture" decoding="async" height="781" loading="lazy" src="../assets/images/young-modulus/fixture-drawing.webp" width="742"/><figcaption>Selected fixture dimensions in millimetres.</figcaption></figure>
+</div>
+</section>
+<section class="section workflow-section" id="method">
+<div class="section-heading"><div><p class="section-label">Measurement workflow</p><h2>From free vibration to elastic modulus</h2></div><p>The analysis preserves a clear link between the measured signal and the final material property.</p></div>
+<div aria-label="Measurement workflow diagram" class="workflow">
+<div class="flow-node"><b>Mechanical excitation</b><small>Cantilever free decay</small></div><span>→</span>
+<div class="flow-node"><b>Induced voltage</b><small>Magnetic pickup</small></div><span>→</span>
+<div class="flow-node accent"><b>Frequency extraction</b><small>FFT + peak refinement</small></div><span>→</span>
+<div class="flow-node"><b>Beam model</b><small>Loaded or unloaded</small></div><span>→</span>
+<div class="flow-node"><b>Young's modulus</b><small>Fit + uncertainty</small></div>
+</div>
+<figure class="workflow-image lightbox-trigger" tabindex="0"><img alt="Research workflow linking CTE measurement, room-temperature and cryogenic Young's modulus measurement, and FFT processing" decoding="async" height="973" loading="lazy" src="../assets/images/young-modulus/project-workflow.webp" width="2048"/><figcaption>Wider research workflow linking room-temperature validation to later cryogenic material characterization.</figcaption></figure>
+</section>
+<section class="section signal-section">
+<div class="section-heading"><div><p class="section-label">Signal processing</p><h2>Sub-bin resonance-frequency estimation</h2></div><p>The raw decay is isolated, detrended, tapered, zero-padded, transformed, and locally refined around the dominant spectral peak.</p></div>
+<figure class="result-wide lightbox-trigger" tabindex="0"><img alt="Four-panel signal processing figure showing raw time signal, windowed signal, FFT spectrum, and refined dominant peak at 9.18 hertz" decoding="async" height="1225" loading="lazy" src="../assets/images/young-modulus/signal-processing.webp" width="2048"/><figcaption>Example analysis: detected response window, preprocessing, FFT spectrum, and refined 9.18 Hz resonance peak.</figcaption></figure>
+<ol class="pipeline">
+<li><span>01</span><b>Detect response</b><small>Identify the excitation and isolate the usable free-decay segment.</small></li>
+<li><span>02</span><b>Detrend</b><small>Remove offset and slow baseline drift from the voltage record.</small></li>
+<li><span>03</span><b>Window</b><small>Apply a tapered window to reduce boundary-induced spectral leakage.</small></li>
+<li><span>04</span><b>Zero-pad</b><small>Interpolate the discrete spectrum onto a denser frequency grid.</small></li>
+<li><span>05</span><b>FFT</b><small>Transform the vibration response into the frequency domain.</small></li>
+<li><span>06</span><b>Sinc fit</b><small>Refine the dominant peak beyond the native FFT-bin spacing.</small></li>
+</ol>
+</section>
+<section class="section methods-section">
+<div class="section-heading"><div><p class="section-label">Independent validation</p><h2>Two routes to the same material property</h2></div><p>Agreement between loaded and unloaded analyses provides an internal check of both the test fixture and the computational pipeline.</p></div>
+<div class="method-grid">
+<article>
+<span class="method-number">01</span><h3>Tip-mass method</h3>
+<div aria-label="One over f squared equals four pi squared L cubed over three E I, multiplied by tip mass plus zero point two three five beam mass" class="equation" role="img">
+<span class="math-fraction compact"><span>1</span><span><i>f</i><sup>2</sup></span></span>
+<span class="math-equals">=</span>
+<span class="math-fraction"><span>4π<sup>2</sup><i>L</i><sup>3</sup></span><span>3<i>E I</i></span></span>
+<span class="math-group">(<i>m</i><sub>tip</sub> + 0.235<i>m</i><sub>beam</sub>)</span>
+</div>
+<p>For each beam length, multiple masses were added at the free end. A weighted linear fit of <em>1/f²</em> against tip mass yields a slope inversely proportional to <em>E</em>.</p>
+</article>
+<article>
+<span class="method-number">02</span><h3>Massless method</h3>
+<div aria-label="f naught equals one point eight seven five squared over two pi L squared, multiplied by the square root of E I over rho A" class="equation" role="img">
+<span><i>f</i><sub>0</sub></span>
+<span class="math-equals">=</span>
+<span class="math-fraction"><span>1.875<sup>2</sup></span><span>2π<i>L</i><sup>2</sup></span></span>
+<span class="math-radical"><span class="root">√</span><span class="radicand"><span class="math-fraction compact"><span><i>E I</i></span><span>ρ<i>A</i></span></span></span></span>
+</div>
+<p>With no attached mass, the squared fundamental frequency is fitted against <em>1/L⁴</em>. This provides an independent estimate based on Euler–Bernoulli beam theory.</p>
+</article>
+</div>
+</section>
+<section class="section results" id="results">
+<div class="section-heading"><div><p class="section-label">Validation case</p><h2>Aluminum agrees with theory by both methods</h2></div><p>Three lengths produce consistent loaded-method estimates, while the unloaded fit independently recovers the expected elastic modulus.</p></div>
+<div class="result-grid">
+<figure class="lightbox-trigger" tabindex="0"><img alt="Aluminum tip-mass results showing linear 1 over frequency squared trends for three beam lengths" decoding="async" height="1348" loading="lazy" src="../assets/images/young-modulus/aluminum-tip-mass.webp" width="2047"/><figcaption><b>Tip-mass method.</b> E = 63.28 ± 13.71, 70.95 ± 15.42, and 66.17 ± 14.32 GPa for L1–L3.</figcaption></figure>
+<figure class="lightbox-trigger" tabindex="0"><img alt="Aluminum massless result showing squared natural frequency versus inverse fourth power of beam length" decoding="async" height="1351" loading="lazy" src="../assets/images/young-modulus/aluminum-massless.webp" width="2047"/><figcaption><b>Massless method.</b> E = 65.44 ± 10.37 GPa compared with 69.0 ± 5.0 GPa theory.</figcaption></figure>
+</div>
+<div class="validation-row">
+<div><strong>65.44 ± 10.37 GPa</strong><span>unloaded aluminum estimate</span></div>
+<div><strong>69.0 ± 5.0 GPa</strong><span>theoretical aluminum reference</span></div>
+<div><strong>Within uncertainty</strong><span>agreement across methods</span></div>
+</div>
+</section>
+<section class="section comparison-section">
+<div class="section-heading"><div><p class="section-label">Multi-material result</p><h2>Five materials characterized with one framework</h2></div><p>The loaded and unloaded estimates agree with one another and reproduce the reference-material values within the reported uncertainty ranges.</p></div>
+<figure class="result-wide lightbox-trigger" tabindex="0"><img alt="Comparison of Young's modulus for aluminum, copper, brass, stainless steel, and CFRP using tip-mass and massless methods" decoding="async" height="1355" loading="lazy" src="../assets/images/young-modulus/material-comparison.webp" width="2048"/><figcaption>Comparison of experimental values from both methods against expected values for the four reference materials.</figcaption></figure>
+<div class="interpretation"><p class="section-label">Engineering interpretation</p><p>The reference materials validate the fixture and analysis pipeline over a broad stiffness range. The CFRP result establishes a room-temperature baseline while acknowledging the additional complexity introduced by anisotropy, fibre orientation, and laminate architecture.</p></div>
+</section>
+<section class="section uncertainty-section">
+<div class="section-heading"><div><p class="section-label">Uncertainty analysis</p><h2>Experimental confidence, not only a fitted value</h2></div><p>Monte Carlo propagation combines geometric, frequency, repeatability, and regression uncertainty through the nonlinear beam equations.</p></div>
+<div class="uncertainty-grid">
+<article><b>Geometry</b><p>Effective length, width, thickness, and specimen mass were sampled from their measurement uncertainties.</p></article>
+<article><b>Frequency</b><p>Trial-to-trial spread and local peak-refinement uncertainty were included.</p></article>
+<article><b>Regression</b><p>Uncertainty in the fitted slope propagates directly into the modulus estimate.</p></article>
+<article class="accent"><b>Dominant sensitivity</b><p>The second moment of area, I = hb³/12, makes thickness uncertainty particularly influential.</p></article>
+</div>
+</section>
+<section class="section video-section">
+<div class="section-heading"><div><p class="section-label">Laboratory demonstration</p><h2>Measured free-decay response</h2></div><p>The video documents the physical test and shows the damped vibration used for resonance-frequency extraction.</p></div>
+<video controls="" playsinline="" poster="../assets/images/young-modulus/setup-close.webp" preload="metadata"><source src="../assets/videos/young-modulus/cantilever-test.mp4" type="video/mp4"/>Your browser does not support embedded video.</video>
+</section>
+<section class="section cryogenic-link">
+<div><p class="section-label">Next experimental stage</p><h2>Room-temperature validation enables cryogenic CFRP testing.</h2><p>The validated workflow is intended to transfer into the three-stage cryostat for simultaneous characterization of multiple CFRP specimens as a function of temperature.</p><a class="primary-button" href="cryostat.html">View the cryostat project</a></div>
+<div aria-label="Transition from room temperature validation to cryogenic testing" class="transition"><span>Reference materials</span><i>→</i><span>CFRP baseline</span><i>→</i><span>Validated pipeline</span><i>→</i><span>4 K testing</span></div>
+</section>
+<section class="section contribution-section">
+<div class="contribution-grid">
+<div><p class="section-label">My contribution</p><h2>Complete project ownership</h2><p>I carried out the full engineering and research workflow, from fixture design and apparatus development through measurement, computation, validation, documentation, and presentation.</p></div>
+<ul class="contribution-list">
+<li>Defined the experimental methodology and validation strategy</li>
+<li>Designed the fixture and developed the SolidWorks CAD</li>
+<li>Built and assembled the room-temperature apparatus</li>
+<li>Performed measurements for five materials, three lengths, and multiple mass cases</li>
+<li>Developed the signal-processing and frequency-extraction pipeline</li>
+<li>Implemented weighted regression and Monte Carlo uncertainty propagation</li>
+<li>Compared loaded and unloaded Young's modulus methods</li>
+<li>Prepared the figures, technical report, poster, and project presentation</li>
+</ul>
+</div>
+<div class="tools"><p class="section-label">Tools and methods</p><div class="tag-row"><span>Python</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span><span>SolidWorks</span><span>FFT</span><span>Weighted regression</span><span>Monte Carlo</span><span>Oscilloscope acquisition</span></div></div>
+</section>
+<section class="section downloads-section">
+<div><p class="section-label">Documentation</p><h2>Technical report and research poster</h2></div>
+<div class="download-links"><a href="../assets/documents/young-modulus/young-modulus-report.pdf" rel="noopener" target="_blank"><span>Young's modulus room-temperature report</span><b>Open PDF ↗</b></a><a href="../assets/documents/young-modulus/characterization-poster.pdf" rel="noopener" target="_blank"><span>Characterization of Composite Materials for Space Environments</span><b>Open poster ↗</b></a></div>
+</section>
+</main>
+<footer>
+<div><strong>Seyedmahdiar Ziaolhagh</strong><span>Aerospace Engineering · Instrumentation</span></div>
+<div><a href="mailto:ziaolhagh@uleth.ca">Email</a><a href="https://www.linkedin.com/in/seyedmahdiar-ziaolhagh-1008a6b5/" rel="noopener noreferrer" target="_blank">LinkedIn</a></div>
+<div><span>Lethbridge, AB, Canada</span><a href="#top">Back to top ↑</a></div>
+</footer>
+<div class="lightbox" hidden=""><button aria-label="Close image" type="button">×</button><img alt="" decoding="async" loading="lazy"/><p></p></div>
+<script src="../assets/js/young-modulus.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+/* Portfolio V8: shared refinement, accessibility, and performance layer */
+:root{--focus:#b14e24;--reading:72ch}
+html{scroll-padding-top:84px}
+body{overflow-wrap:anywhere}
+.skip-link{position:fixed;left:16px;top:10px;z-index:9999;background:#0b2035;color:#fff;padding:10px 14px;border-radius:2px;transform:translateY(-160%);transition:transform .18s;text-decoration:none}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+img,video{max-width:100%;height:auto}
+figure img{display:block}
+main p,main li{max-width:var(--reading)}
+.site-header{backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);background:rgba(255,255,255,.94)}
+.site-footer{border-top:1px solid #dbe2e8;margin-top:28px}
+img[loading="lazy"]{content-visibility:auto}
+.project-page figure,.result-figure,.poster-card,.gallery-item{content-visibility:auto;contain-intrinsic-size:600px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media print{.site-header,.site-footer,.menu-toggle,.menu-button,.back-link,.hero-actions,.lightbox{display:none!important}body{color:#000;background:#fff}main{max-width:none!important}a{text-decoration:none;color:#000}section{break-inside:avoid}img{max-height:520px;object-fit:contain}}
