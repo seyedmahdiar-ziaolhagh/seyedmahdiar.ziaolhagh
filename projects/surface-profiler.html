@@ -4,16 +4,19 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Automated two-axis interferometric surface profiling and computational stitching using a PhaseCam 4030, stepper-driven stages, and Python." name="description"/>
+<meta content="Automated two-axis interferometric surface profiling and validated 2 × 4 tile stitching using a PhaseCam 4030, stepper-driven stages, and Python." name="description"/>
 <title>Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh</title>
 <link href="../assets/css/surface-profiler.css" rel="stylesheet"/>
-<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/><link href="../assets/css/v8.css" rel="stylesheet"/><meta content="#0b2035" name="theme-color"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh" property="og:title"/><meta content="Automated two-axis interferometric surface profiling and computational stitching using a PhaseCam 4030, stepper-driven stages, and Python." property="og:description"/><meta content="website" property="og:type"/><meta content="../assets/images/social-preview.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh" name="twitter:title"/><meta content="Automated two-axis interferometric surface profiling and computational stitching using a PhaseCam 4030, stepper-driven stages, and Python." name="twitter:description"/><meta content="../assets/images/social-preview.jpg" name="twitter:image"/></head>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/><link href="../assets/css/v8.css" rel="stylesheet"/><meta content="#0b2035" name="theme-color"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh" property="og:title"/><meta content="Automated two-axis interferometric surface profiling and validated 2 × 4 tile stitching using a PhaseCam 4030, stepper-driven stages, and Python." property="og:description"/><meta content="website" property="og:type"/><meta content="../assets/images/social-preview.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Interferometric Surface Profiler | Seyedmahdiar Ziaolhagh" name="twitter:title"/><meta content="Automated two-axis interferometric surface profiling and validated 2 × 4 tile stitching using a PhaseCam 4030, stepper-driven stages, and Python." name="twitter:description"/><meta content="../assets/images/social-preview.jpg" name="twitter:image"/></head>
 <body><a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
 <a aria-label="Portfolio home" class="brand" href="../index.html">Seyedmahdiar Ziaolhagh</a>
 <button aria-controls="site-nav" aria-expanded="false" class="menu-button" type="button">Menu</button>
 <nav aria-label="Primary navigation" id="site-nav">
 <a href="../index.html">Home</a>
+<a href="actuator-bracket.html">NX Bracket</a>
+<a href="catia-parametric-wing.html">CATIA Wing</a>
+<a href="aileron-control.html">Aileron Control</a>
 <a href="cryostat.html">Cryostat</a>
 <a href="young-modulus.html">Young's Modulus</a>
 <a href="asteroid-mining.html">Asteroid Mining</a>
@@ -41,14 +44,14 @@
 </figure>
 </section>
 <section aria-label="Project facts" class="metric-strip">
-<div><strong>14</strong><span>surface tiles</span></div>
-<div><strong>2 × 7</strong><span>scan layout</span></div>
+<div><strong>8</strong><span>surface tiles</span></div>
+<div><strong>2 × 4</strong><span>scan layout</span></div>
 <div><strong>6.949 mm</strong><span>single-tile field of view</span></div>
 <div><strong>3.44 µm</strong><span>pixel spacing</span></div>
 </section>
 <section class="section intro-grid" id="overview">
 <div><p class="section-label">Overview</p><h2>Extending a limited field of view</h2></div>
-<div class="prose"><p>The PhaseCam can resolve local surface form with high spatial density, but its field of view is smaller than the mirror. I developed a translation platform and a Python reconstruction workflow that acquire overlapping surface maps, determine their relative alignment, correct tile-to-tile offsets, and combine them into a continuous aperture map.</p><p>The system uses independent horizontal and vertical stages. The mirror moves while the interferometer remains fixed, preserving the optical measurement geometry during the scan.</p></div>
+<div class="prose"><p>The PhaseCam can resolve local surface form with high spatial density, but its field of view is smaller than the mirror region of interest. I developed a translation platform and Python reconstruction workflow that acquires overlapping surface maps, solves their relative piston and tilt, and combines them into a larger continuous aperture map.</p><p>The system uses independent horizontal and vertical stages. The mirror moves while the interferometer remains fixed. For the latest flat-mirror validation, eight measurements were acquired as a 2 × 4 mosaic with nominal 30% overlap.</p></div>
 </section>
 <section class="section problem-panel">
 <div class="problem-copy"><p class="section-label">Engineering problem</p><h2>One measurement cannot cover the complete optic.</h2><p>Each acquisition captures only a local patch. The useful full-aperture result depends on repeatable motion, controlled overlap, robust registration, and blending that does not introduce artificial seams.</p></div>
@@ -75,14 +78,14 @@
 </div>
 </section>
 <section class="section scan-section">
-<div class="section-heading"><div><p class="section-label">Acquisition strategy</p><h2>Fourteen overlapping measurements</h2></div><p>Seven tiles are acquired along each row. Row 2 is positioned above Row 1, with nominal 30% overlap between adjacent fields.</p></div>
-<div aria-label="Two-row seven-column tile acquisition layout" class="scan-layout">
+<div class="section-heading"><div><p class="section-label">Acquisition strategy</p><h2>Eight overlapping measurements</h2></div><p>Four tiles are acquired along each row. Row 2 is positioned above Row 1, with nominal 30% overlap between adjacent fields.</p></div>
+<div aria-label="Two-row four-column tile acquisition layout" class="scan-layout">
 <div class="axis-z">Z ↑</div>
 <div class="row-name">Row 2</div><div class="tiles" data-row="2"></div>
 <div class="row-name">Row 1</div><div class="tiles" data-row="1"></div>
 <div class="axis-x">X scan direction →</div>
 </div>
-<div class="video-wrap"><video controls="" playsinline="" poster="../assets/images/surface-profiler/setup-side.webp" preload="metadata"><source src="../assets/videos/surface-profiler/scan-motion.mp4" type="video/mp4"/>Your browser does not support embedded video.</video><div><p class="section-label">Motion demonstration</p><h3>Stage movement during acquisition</h3><p>The stage advances by a calibrated increment, pauses for mechanical settling, and then allows the next surface map to be acquired.</p></div></div>
+<div class="video-wrap"><video controls="" playsinline="" poster="../assets/images/surface-profiler/setup-side.webp" preload="metadata"><source src="../assets/videos/surface-profiler/scan-motion.mp4" type="video/mp4"/>Your browser does not support embedded video.</video><div><p class="section-label">Motion demonstration</p><h3>Stage movement during acquisition</h3><p>The stage advances by a nominal 4.864 mm increment, pauses for mechanical settling, and then allows the next surface map to be acquired.</p></div></div>
 </section>
 <section class="section" id="pipeline">
 <div class="section-heading"><div><p class="section-label">Computational methods</p><h2>From XYZ files to a continuous surface</h2></div><p>The reconstruction separates geometric placement from surface-height correction so that errors can be diagnosed at each stage.</p></div>
@@ -91,9 +94,9 @@
 <li><span>02</span><b>Reference removal</b><small>Remove piston and tilt before comparing local surface structure.</small></li>
 <li><span>03</span><b>Overlap extraction</b><small>Select common valid regions using the expected stage displacement.</small></li>
 <li><span>04</span><b>Registration</b><small>Refine relative X–Z placement through normalized cross-correlation.</small></li>
-<li><span>05</span><b>Offset solution</b><small>Estimate tile and row height corrections from shared regions.</small></li>
+<li><span>05</span><b>Global piston/tilt solution</b><small>Solve tile corrections simultaneously from the full overlap network.</small></li>
 <li><span>06</span><b>Weighted blending</b><small>Taper overlap contributions to avoid abrupt seams.</small></li>
-<li><span>07</span><b>Surface reconstruction</b><small>Generate 2D, 3D, profile, and validation outputs.</small></li>
+<li><span>07</span><b>Surface reconstruction</b><small>Generate the stitched map, remove one global best-fit plane, and evaluate validation metrics.</small></li>
 </ol>
 </section>
 <section class="section registration-section">
@@ -104,27 +107,32 @@
 <div class="reg-card"><h3>After</h3><div class="reg-plane after"><span>A</span><span>B</span><i>overlap</i></div><p>Cross-correlation refines the shift before height offsets are solved.</p></div>
 </div>
 <div class="validation-row">
-<div><strong>0.988</strong><span>row-to-row correlation</span></div>
-<div><strong>4.392 nm</strong><span>RMS difference between row cores</span></div>
-<div><strong>2.146 nm</strong><span>row–column interaction RMS</span></div>
+<div><strong>8.28 nm</strong><span>median corrected overlap RMS</span></div>
+<div><strong>9.45 nm</strong><span>maximum corrected overlap RMS</span></div>
+<div><strong>0.922</strong><span>independent row-profile correlation</span></div>
 </div>
-<p class="fine-print">Validation values are from the tile-core row comparison performed during reconstruction; they characterize consistency between the two acquired rows, not the absolute accuracy of the interferometer.</p>
+<p class="fine-print">The overlap statistics summarize the ten horizontal and vertical shared regions after the simultaneous piston-and-tilt solution. The independent row-profile comparison gave a 23.75 nm RMS difference. These values characterize stitching consistency and broad-form repeatability, not absolute interferometer accuracy.</p>
 </section>
 <section class="section results" id="results">
-<div class="section-heading"><div><p class="section-label">Reconstruction</p><h2>Full stitched surface</h2></div><p>The result spans approximately 36 mm in X and 12 mm in Z. Height is shown in micrometres and includes the measured low-order surface form after tile stitching.</p></div>
-<figure class="result-wide lightbox-trigger" tabindex="0"><img alt="Two-dimensional stitched surface-height map over approximately 36 by 12 millimetres" decoding="async" height="798" loading="lazy" src="../assets/images/surface-profiler/stitched-surface-2d.webp" width="2048"/><figcaption><b>2D surface map.</b> Continuous full-aperture visualization with a shared height scale.</figcaption></figure>
-<figure class="result-wide lightbox-trigger" tabindex="0"><img alt="Three-dimensional rendering of the stitched mirror surface" decoding="async" height="1653" loading="lazy" src="../assets/images/surface-profiler/stitched-surface-3d.webp" width="2048"/><figcaption><b>3D surface reconstruction.</b> The broad low-order curvature is visible across both scan directions.</figcaption></figure>
-<aside class="interpretation"><p class="section-label">Interpretation</p><p>The large micrometre-scale bowl visible here should not be interpreted directly as surface roughness. It contains low-order form, reference alignment, and possible systematic contributions. Roughness or flatness reporting requires a clearly defined aperture, reference subtraction, filtering convention, and uncertainty analysis.</p></aside>
+<div class="section-heading"><div><p class="section-label">Validated reconstruction</p><h2>Final 2 × 4 stitched mirror surface</h2></div><p>The latest flat-mirror reconstruction spans approximately 21.5 mm in X and 11.8 mm in Z. After solving tile-to-tile piston and tilt simultaneously, one global best-fit plane was removed from the completed mosaic.</p></div>
+<figure class="result-wide lightbox-trigger" tabindex="0"><img alt="Plane-removed two-dimensional stitched flat-mirror surface over approximately 21.5 by 11.8 millimetres" decoding="async" height="1038" loading="lazy" src="../assets/images/surface-profiler/stitched-final-plane-removed.webp" width="2048"/><figcaption><b>Final plane-removed stitched surface.</b> Eight overlapping PhaseCam measurements combined into a continuous 2 × 4 map. The plane-removed surface has Rq = 60.65 nm and a robust 0.1–99.9% PV of approximately 250 nm.</figcaption></figure>
+<div class="validation-row">
+<div><strong>21.5 × 11.8 mm</strong><span>stitched measurement area</span></div>
+<div><strong>60.65 nm</strong><span>plane-removed surface Rq</span></div>
+<div><strong>≈250 nm</strong><span>robust 0.1–99.9% PV</span></div>
+</div>
+<aside class="interpretation"><p class="section-label">Interpretation</p><p>The 60.65 nm value is the RMS height of the <b>plane-removed stitched surface</b>, not a claim of microscopic mirror roughness. The map still contains broad mirror figure, waviness, and any residual stitching or systematic measurement contributions.</p></aside>
+<aside class="interpretation" style="margin-top:28px"><p class="section-label">Independent validation</p><p>The broad mirror form was reconstructed independently from the two scan rows. Their profiles correlated at <b>0.922</b> with an RMS difference of <b>23.75 nm</b>, supporting repeatability of the large-scale shape while also showing the remaining measurement and registration uncertainty.</p></aside>
 </section>
 <section class="section" id="contribution">
 <div class="contribution-grid">
 <div><p class="section-label">My contribution</p><h2>Designed the measurement system and reconstruction workflow</h2><p>I combined mechanical integration, stage calibration, automated motion, interferometric acquisition, and scientific programming into one end-to-end metrology platform.</p></div>
 <ul class="contribution-list">
 <li>Integrated two orthogonal stepper-driven translation stages with the optical setup.</li>
-<li>Defined the 2 × 7 scan sequence, overlap, settling, and data-organization strategy.</li>
+<li>Defined the 2 × 4 validation scan, nominal 30% overlap, settling, and data-organization strategy.</li>
 <li>Developed Python tools for loading, detrending, registering, offset-correcting, and blending surface tiles.</li>
 <li>Diagnosed missing pixels, overlap errors, row consistency, and stage-displacement uncertainty.</li>
-<li>Generated full-aperture 2D and 3D reconstructions for interpretation and reporting.</li>
+<li>Generated validated 2D stitched reconstructions and quantitative overlap/row-consistency checks for interpretation and reporting.</li>
 </ul>
 </div>
 <div class="tools"><span>Python</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span><span>Arduino</span><span>PhaseCam 4030</span><span>4Sight Focus</span><span>Interferometry</span></div>
