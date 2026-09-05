@@ -1,4 +1,4 @@
-# Seyedmahdiar Ziaolhagh — Portfolio V12
+# Seyedmahdiar Ziaolhagh — Portfolio V13
 
 ## Preview locally
 Open the folder in Visual Studio Code and run **Live Server** from `index.html`.
@@ -36,6 +36,13 @@ The site is static and can be deployed to GitHub Pages, Netlify, Cloudflare Page
 - Added stitching-quality metrics: 8.28 nm median overlap RMS, 9.45 nm maximum overlap RMS, and 0.922 independent row-profile correlation
 - Added the final plane-removed stitched surface (Rq = 60.65 nm; robust 0.1–99.9% PV ≈ 250 nm) with explicit interpretation limits
 - Removed the previous unvalidated 2D/3D reconstruction assets and updated portfolio-wide project descriptions
+
+## V13 refinement
+
+- Rebuilt the downloadable CV as a complete three-page general engineering profile covering experience, education, technical skills, projects, publication, presentations, outreach, certifications, honours, and languages
+- Expanded the on-site resume with the latest CAD-informed aileron controls project and updated experimental-system results
+- Added a dedicated “Engineering in practice” gallery featuring turbine inspection, UAV integration, fixed-wing flight testing, and flight training
+- Restored and upscaled the supplied field photographs, then optimized them as responsive WebP assets
 
 ## Before adding a custom domain
 Add absolute canonical URLs and generate a domain-specific sitemap only after the final domain is known.
