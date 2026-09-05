@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="CATIA V5 parametric wing study connecting Knowledgeware-controlled geometry, surface development, structural definition, and a manufacturable sheet-metal rib." name="description"/>
+<title>CATIA V5 Parametric Wing | Seyedmahdiar Ziaolhagh</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<link href="../assets/css/project.css" rel="stylesheet"/>
+<link href="../assets/css/catia-wing.css" rel="stylesheet"/>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../assets/css/v8.css" rel="stylesheet"/>
+<meta content="#0b2035" name="theme-color"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="CATIA V5 Parametric Wing | Seyedmahdiar Ziaolhagh" property="og:title"/>
+<meta content="A parameter-driven CATIA V5 wing study developed from aerodynamic surfaces through internal structure and sheet-metal documentation." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="../assets/images/catia-wing/parametric-model.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+</head>
+<body class="project-page catia-wing-page"><a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="../index.html">Seyedmahdiar Ziaolhagh</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span></button>
+<nav aria-label="Primary navigation" class="main-nav">
+<a href="../index.html">Home</a>
+<div class="nav-dropdown">
+<button aria-expanded="false" class="dropdown-toggle active-project" type="button">Projects <span>⌄</span></button>
+<div class="dropdown-menu">
+<a href="actuator-bracket.html"><small>Mechanical design · FEA · GD&amp;T</small>NX Actuator Bracket</a>
+<a href="catia-parametric-wing.html"><small>Knowledgeware · surfaces · sheet metal</small>CATIA Parametric Wing</a>
+<a href="aileron-control.html"><small>CATIA · Simulink · PID control</small>CAD-Informed Aileron Control</a>
+<a href="cryostat.html"><small>Cryogenic engineering</small>Three-Stage Cryostat</a>
+<a href="surface-profiler.html"><small>Precision metrology</small>Interferometric Surface Profiler</a>
+<a href="young-modulus.html"><small>Experimental mechanics</small>Vibration-Based Young's Modulus</a>
+<a href="asteroid-mining.html"><small>Space systems optimization</small>Asteroid Mining Optimization</a>
+</div>
+</div>
+<a href="../pages/research.html">Research</a>
+<a href="../pages/resume.html">Resume</a>
+<a href="../pages/about.html">About</a>
+<a href="../pages/contact.html">Contact</a>
+</nav>
+</header>
+<main id="main-content">
+<section class="project-hero catia-hero" id="top">
+<div class="project-hero-copy">
+<a class="project-back" href="../index.html#selected-work">← Selected work</a>
+<p class="project-kicker">Knowledgeware · surface design · sheet metal</p>
+<h1>CATIA V5 Parametric Wing</h1>
+<p class="project-lede">A design-intent study that connects parameter-controlled wing geometry to an organized surface model, structural skeleton, wing-box definition, and a production-oriented sheet-metal rib.</p>
+<dl class="project-facts">
+<div><dt>Role</dt><dd>Independent CAD development</dd></div>
+<div><dt>Platform</dt><dd>CATIA V5</dd></div>
+<div><dt>Methods</dt><dd>Parameters · relations · multi-section surfaces</dd></div>
+<div><dt>Deliverables</dt><dd>Wing model · formed rib · A3 drawing</dd></div>
+</dl>
+</div>
+<figure class="project-hero-media catia-hero-media">
+<img alt="CATIA V5 parametric wing model with its organized feature tree visible" decoding="async" fetchpriority="high" height="882" src="../assets/images/catia-wing/parametric-model.webp" width="1863"/>
+<figcaption>Parameter-driven wing model and structured CATIA feature tree.</figcaption>
+</figure>
+</section>
+<div class="status-strip"><strong>Scope</strong><span>CAD and manufacturing-documentation study. Aerodynamic performance and structural strength were not evaluated in this project.</span></div>
+
+<section class="project-section split" id="overview">
+<div class="section-heading-block"><p class="project-kicker">Overview</p><h2>Geometry designed to change without rebuilding the model</h2></div>
+<div class="project-copy">
+<p>The project focused on creating a wing as a controlled engineering system rather than a single frozen shape. Governing parameters and relations feed the construction geometry, section definitions, guide curves, and outer surfaces.</p>
+<p>The feature tree was divided into clearly named groups for parameters, sections, guides, surfaces, the structural skeleton, and wing-box structure. This keeps upstream aerodynamic geometry separate from downstream structural features while maintaining associativity between them.</p>
+</div>
+</section>
+
+<section class="project-section architecture" id="architecture">
+<div class="section-heading-block wide"><p class="project-kicker">Model architecture</p><h2>A traceable chain from design inputs to structure</h2><p>Each stage consumes controlled references from the stage before it, making design changes easier to inspect and reducing dependence on manually recreated geometry.</p></div>
+<div class="stage-list wing-stages">
+<article><span>01</span><div><h3>Parameters and construction geometry</h3><p>Centralized dimensions and relations establish the governing planform and section placement.</p></div></article>
+<article><span>02</span><div><h3>Sections and guide curves</h3><p>Spanwise profiles and continuous guides control the wing's changing chord, sweep, thickness distribution, and twist.</p></div></article>
+<article><span>03</span><div><h3>Wing surfaces and solid definition</h3><p>Multi-section surface construction connects the profiles into a continuous aerodynamic form that can be closed into downstream solid geometry.</p></div></article>
+<article><span>04</span><div><h3>Structural skeleton and wing box</h3><p>Internal references are derived from the wing geometry so spars, ribs, and the box remain aligned with the outer form.</p></div></article>
+<article><span>05</span><div><h3>Manufacturing definition</h3><p>A representative rib was formed as a sheet-metal component and documented with unfolded geometry, bend instructions, and material notes.</p></div></article>
+</div>
+</section>
+
+<section class="project-section wing-geometry" id="geometry">
+<div class="section-heading-block wide"><p class="project-kicker">Parametric geometry</p><h2>Planform, spanwise profile, and twist captured in one model</h2><p>The views below isolate the principal geometric behaviours: taper and sweep in plan view, the thin spanwise section, and the three-dimensional transition between root and tip.</p></div>
+<div class="wing-gallery">
+<figure class="wing-gallery-primary"><img alt="Three-dimensional CATIA wing surface showing the root-to-tip transition" decoding="async" height="483" loading="lazy" src="../assets/images/catia-wing/twisted-surface.webp" width="741"/><figcaption>Three-dimensional surface transition showing the tapered and twisted form.</figcaption></figure>
+<figure><img alt="Top view of the tapered CATIA wing planform" decoding="async" height="801" loading="lazy" src="../assets/images/catia-wing/planform.webp" width="1160"/><figcaption>Planform view: sweep and taper are governed by the construction geometry.</figcaption></figure>
+<figure><img alt="Spanwise edge view of the CATIA wing" decoding="async" height="521" loading="lazy" src="../assets/images/catia-wing/spanwise-profile.webp" width="1075"/><figcaption>Spanwise profile: section placement controls the gradual geometric transition.</figcaption></figure>
+</div>
+</section>
+
+<section class="project-section rib-section" id="rib">
+<div class="section-heading-block wide"><p class="project-kicker">Structural translation</p><h2>From aerodynamic envelope to a formed wing rib</h2><p>The project continues beyond the outer surface. A representative internal rib demonstrates how associative wing references can support a manufacturable sheet-metal component.</p></div>
+<div class="rib-layout">
+<figure><img alt="CATIA formed sheet-metal wing rib with flanges and two lightening holes" decoding="async" height="588" loading="lazy" src="../assets/images/catia-wing/formed-rib.webp" width="945"/><figcaption>Formed rib with four 90-degree flanges and two circular cut-outs.</figcaption></figure>
+<dl class="rib-facts">
+<div><dt>Material</dt><dd>Aluminum alloy 2024-T3</dd></div>
+<div><dt>Sheet thickness</dt><dd>1.2 mm</dd></div>
+<div><dt>Inside bend radius</dt><dd>2.4 mm</dd></div>
+<div><dt>Forming</dt><dd>4 × 90° bends</dd></div>
+<div><dt>Drawing mass</dt><dd>0.01 kg</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="project-section drawing-section" id="drawing">
+<div class="section-heading-block wide"><p class="project-kicker">Manufacturing documentation</p><h2>Formed and unfolded definitions on one A3 sheet</h2><p>The drawing combines isometric and front views with a dimensioned flat pattern. Material, thickness, bend radius, bend direction, minimum ligament, edge treatment, and post-forming dimension requirements are stated explicitly.</p></div>
+<figure class="wing-drawing"><img alt="A3 manufacturing drawing for wing rib 03 with formed, front, and unfolded views" decoding="async" height="1287" loading="lazy" src="../assets/images/catia-wing/rib-manufacturing-drawing.webp" width="1819"/><figcaption>Wing Rib 03 manufacturing drawing — revision A, drawing W4-RIB03-001.</figcaption></figure>
+</section>
+
+<section class="project-section interpretation-section wing-lessons" id="outcomes">
+<div class="section-heading-block"><p class="project-kicker">Engineering outcomes</p><h2>What this project demonstrates</h2></div>
+<div class="interpretation-grid">
+<article><h3>Design intent</h3><ul><li>Centralized parameters and relations</li><li>Organized dependency structure</li><li>Associative surface-to-structure workflow</li><li>Controlled root-to-tip geometry</li></ul></article>
+<article><h3>Production awareness</h3><ul><li>Sheet-metal bend definition</li><li>Unfolded manufacturing geometry</li><li>Material and thickness specification</li><li>Dimensioned A3 technical drawing</li></ul></article>
+</div>
+<aside class="analysis-note"><strong>Next engineering step:</strong> couple the parametric geometry to aerodynamic and structural analyses, then use the results to drive spar, rib-spacing, and laminate or skin-thickness decisions.</aside>
+</section>
+
+<section class="project-section downloads">
+<div class="section-heading-block"><p class="project-kicker">Project file</p><h2>Manufacturing drawing</h2></div>
+<div class="download-links">
+<a href="../assets/documents/catia-wing/Wing_Rib_03_Manufacturing_Drawing.pdf" rel="noopener" target="_blank"><span>Wing Rib 03 — A3 drawing</span><b>Open PDF ↗</b></a>
+</div>
+</section>
+<aside class="credit-note"><h2>Project scope and authorship</h2><p>Parametric model architecture, wing surface development, structural skeleton, sheet-metal rib, and manufacturing drawing were completed by <strong>Seyedmahdiar Ziaolhagh</strong> as an independent CATIA V5 portfolio project.</p></aside>
+</main>
+<footer class="site-footer project-footer">
+<div><strong>Seyedmahdiar Ziaolhagh</strong><span>·</span>Aerospace Engineer</div>
+<div class="footer-links"><a href="mailto:ziaolhagh@uleth.ca">Email</a><a href="https://www.linkedin.com/in/seyedmahdiar-ziaolhagh-1008a6b5/" rel="noopener noreferrer" target="_blank">LinkedIn</a><span>Lethbridge, AB, Canada</span></div>
+</footer>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

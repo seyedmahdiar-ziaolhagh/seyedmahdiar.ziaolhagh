@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="End-to-end Siemens NX design, assembly, GD&T documentation, and preliminary 5 kN linear-static assessment of an aerospace actuator bracket." name="description"/>
+<title>Aerospace Actuator Bracket | Seyedmahdiar Ziaolhagh</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<link href="../assets/css/project.css" rel="stylesheet"/>
+<link href="../assets/css/actuator-bracket.css" rel="stylesheet"/>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../assets/css/v8.css" rel="stylesheet"/>
+<meta content="#0b2035" name="theme-color"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="Aerospace Actuator Bracket | Seyedmahdiar Ziaolhagh" property="og:title"/>
+<meta content="Siemens NX CAD, assembly, GD&T documentation, and preliminary 5 kN linear-static assessment." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="../assets/images/social-preview.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+</head>
+<body class="project-page actuator-page"><a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="../index.html">Seyedmahdiar Ziaolhagh</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span></button>
+<nav aria-label="Primary navigation" class="main-nav">
+<a href="../index.html">Home</a>
+<div class="nav-dropdown">
+<button aria-expanded="false" class="dropdown-toggle active-project" type="button">Projects <span>⌄</span></button>
+<div class="dropdown-menu">
+<a href="actuator-bracket.html"><small>Mechanical design · FEA · GD&amp;T</small>NX Actuator Bracket</a>
+<a href="catia-parametric-wing.html"><small>Knowledgeware · surfaces · sheet metal</small>CATIA Parametric Wing</a>
+<a href="aileron-control.html"><small>CATIA · Simulink · PID control</small>CAD-Informed Aileron Control</a>
+<a href="cryostat.html"><small>Cryogenic engineering</small>Three-Stage Cryostat</a>
+<a href="surface-profiler.html"><small>Precision metrology</small>Interferometric Surface Profiler</a>
+<a href="young-modulus.html"><small>Experimental mechanics</small>Vibration-Based Young's Modulus</a>
+<a href="asteroid-mining.html"><small>Space systems optimization</small>Asteroid Mining Optimization</a>
+</div>
+</div>
+<a href="../pages/research.html">Research</a>
+<a href="../pages/resume.html">Resume</a>
+<a href="../pages/about.html">About</a>
+<a href="../pages/contact.html">Contact</a>
+</nav>
+</header>
+<main id="main-content">
+<section class="project-hero actuator-hero" id="top">
+<div class="project-hero-copy">
+<a class="project-back" href="../index.html#selected-work">← Selected work</a>
+<p class="project-kicker">Mechanical design · FEA · GD&amp;T</p>
+<h1>Aerospace Actuator Bracket</h1>
+<p class="project-lede">An end-to-end mechanical design study developed in Siemens NX: parametric part modelling, constrained assembly, preliminary static assessment, and a two-sheet manufacturing and assembly drawing package.</p>
+<dl class="project-facts">
+<div><dt>Role</dt><dd>Independent design and analysis</dd></div>
+<div><dt>Tools</dt><dd>Siemens NX · Simcenter 3D</dd></div>
+<div><dt>Load case</dt><dd>5 kN static bearing load</dd></div>
+<div><dt>Deliverables</dt><dd>3-part assembly · 2 drawing sheets</dd></div>
+</dl>
+</div>
+<figure class="project-hero-media actuator-hero-media">
+<img alt="Completed actuator assembly with bracket, link, and pin" decoding="async" fetchpriority="high" height="623" src="../assets/images/actuator-bracket/assembly-complete.webp" width="859"/>
+<figcaption>Completed three-component actuator assembly.</figcaption>
+</figure>
+</section>
+<div class="status-strip"><strong>Scope</strong><span>Portfolio design study and preliminary linear-static assessment. The model is not a certified flight design.</span></div>
+
+<section class="project-section split" id="overview">
+<div class="section-heading-block"><p class="project-kicker">Overview</p><h2>One workflow from geometry to engineering documentation</h2></div>
+<div class="project-copy">
+<p>The objective was to build a compact clevis-style bracket that transfers actuator load through a removable pin while mounting to a supporting structure through four base holes.</p>
+<p>I used the project to practise the complete mechanical-development chain: creating design-intent-driven geometry, controlling component motion in an assembly, checking the load path with finite-element analysis, and communicating manufacturing intent with datums, tolerances, GD&amp;T, a bill of materials, and associative balloons.</p>
+</div>
+</section>
+
+<section class="project-section" id="contribution">
+<div class="section-heading-block wide"><p class="project-kicker">My contribution</p><h2>CAD, analysis, and drawings developed as one system</h2></div>
+<div class="contribution-grid">
+<article><h3>Parametric CAD</h3><p>Modelled the bracket, actuator link, and headed pin with controlled dimensions, repeated features, fillets, and material assignments.</p></article>
+<article><h3>Assembly definition</h3><p>Applied concentric and seating constraints while preserving the intended rotational degree of freedom about the pivot axis.</p></article>
+<article><h3>Engineering documentation</h3><p>Prepared manufacturing and assembly sheets with datums, position tolerances, BOM attributes, section views, balloons, and assembly notes.</p></article>
+</div>
+</section>
+
+<section class="project-section cad-section" id="cad">
+<div class="section-heading-block wide"><p class="project-kicker">CAD development</p><h2>Bracket, constrained assembly, and serviceable layout</h2><p>The bracket uses two 12 mm lugs separated by a 30 mm gap. A 24 mm-wide link leaves 3 mm nominal clearance on each side, while the removable pin defines the rotational joint.</p></div>
+<div class="cad-gallery">
+<figure class="cad-primary"><img alt="Isometric CAD model of the aluminum actuator bracket" decoding="async" height="662" loading="lazy" src="../assets/images/actuator-bracket/bracket-isometric.webp" width="962"/><figcaption>Bracket geometry with lug-root transitions and four mounting holes.</figcaption></figure>
+<figure><img alt="Exploded actuator assembly showing the bracket, pin, and link" decoding="async" height="639" loading="lazy" src="../assets/images/actuator-bracket/assembly-exploded.webp" width="743"/><figcaption>Exploded view clarifying the three-component assembly sequence.</figcaption></figure>
+<figure><img alt="Completed assembled actuator bracket" decoding="async" height="623" loading="lazy" src="../assets/images/actuator-bracket/assembly-complete.webp" width="859"/><figcaption>Assembled configuration with rotation retained about the pin axis.</figcaption></figure>
+</div>
+<div class="component-specs" aria-label="Assembly component specifications">
+<article><span>01</span><div><h3>Bracket</h3><p>Aluminum 6061 · 120 × 70 × 8 mm base · two Ø12 mm pivot bores</p></div></article>
+<article><span>02</span><div><h3>Pin</h3><p>AISI 4340 steel · Ø11.8 mm shaft · headed removable joint</p></div></article>
+<article><span>03</span><div><h3>Actuator link</h3><p>Aluminum 6061 · 24 mm joint width · Ø12.2 mm bore</p></div></article>
+</div>
+</section>
+
+<section class="project-section fea-setup" id="analysis">
+<div class="section-heading-block wide"><p class="project-kicker">Finite-element setup</p><h2>Preliminary 5 kN linear-static load case</h2><p>The bracket was assessed separately using a SOL 101 linear-static solution. The setup was intentionally simple and is presented with its limitations.</p></div>
+<div class="analysis-layout">
+<figure><img alt="Finite-element mesh with mounting constraints and bearing loads applied to the actuator bracket" decoding="async" height="768" loading="lazy" src="../assets/images/actuator-bracket/mesh-boundary-conditions.webp" width="1357"/><figcaption>Four mounting bores fully constrained; 2.5 kN bearing load applied to each lug bore.</figcaption></figure>
+<div class="analysis-facts">
+<article><strong>5 kN</strong><span>total applied load</span></article>
+<article><strong>2.3 mm</strong><span>final nominal element size</span></article>
+<article><strong>58,708</strong><span>CTETRA elements</span></article>
+<article><strong>94,464</strong><span>GRID nodes</span></article>
+</div>
+</div>
+</section>
+
+<section class="project-section results-section" id="results">
+<div class="section-heading-block wide"><p class="project-kicker">Results</p><h2>Displacement converged; local stress remained boundary-sensitive</h2></div>
+<div class="result-grid">
+<article class="result-card">
+<figure><img alt="Simcenter displacement contour for the actuator bracket" decoding="async" height="790" loading="lazy" src="../assets/images/actuator-bracket/displacement.webp" width="1390"/></figure>
+<div><p class="result-label">Maximum displacement</p><strong>1.240 mm</strong><p>The largest motion occurs at the upper lug region, consistent with bending of the bracket away from the constrained base.</p></div>
+</article>
+<article class="result-card">
+<figure><img alt="Averaged von Mises stress contour for the actuator bracket" decoding="async" height="808" loading="lazy" src="../assets/images/actuator-bracket/von-mises-stress.webp" width="1415"/></figure>
+<div><p class="result-label">Global averaged von Mises peak</p><strong>509.5 MPa</strong><p>The global peak is concentrated near an idealized fixed mounting boundary and is treated as constraint-driven localization, not a design allowable.</p></div>
+</article>
+</div>
+<div class="convergence-panel">
+<div><p class="project-kicker">Mesh refinement</p><h3>Displacement stabilized across three meshes</h3><p>The global displacement changed by only 0.004 mm from the coarsest to the finest mesh.</p></div>
+<dl>
+<div><dt>3.2 mm</dt><dd>1.236 mm</dd></div>
+<div><dt>2.7 mm</dt><dd>1.239 mm</dd></div>
+<div><dt>2.3 mm</dt><dd>1.240 mm</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="project-section interpretation-section">
+<div class="section-heading-block"><p class="project-kicker">Engineering interpretation</p><h2>What the model establishes—and what it does not</h2></div>
+<div class="interpretation-grid">
+<article><h3>Useful evidence</h3><ul><li>Clear load path from the pivot bores into the base</li><li>Stable global displacement under mesh refinement</li><li>Stress concentration identified at the lug roots</li><li>Selected lug-root nodes reached approximately 197 MPa</li></ul></article>
+<article><h3>Required next steps</h3><ul><li>Represent bolts, contact, and preload instead of fixed bore surfaces</li><li>Apply a local mesh-convergence study at the lug roots</li><li>Confirm alloy temper and allowable properties</li><li>Evaluate nonlinear response before claiming a strength margin</li></ul></article>
+</div>
+<aside class="analysis-note"><strong>No margin of safety is claimed.</strong> The stress field did not demonstrate robust local convergence, and the global maximum is dominated by the idealized support condition. These results support design learning and model refinement rather than certification.</aside>
+<figure class="lug-root-figure"><img alt="Selected-node von Mises stress inspection along the actuator bracket lug root" decoding="async" height="817" loading="lazy" src="../assets/images/actuator-bracket/lug-root-stress.webp" width="1435"/><figcaption>Selected-node inspection along the lug root; the sampled set reached 197.04 MPa.</figcaption></figure>
+</section>
+
+<section class="project-section drawing-section" id="drawings">
+<div class="section-heading-block wide"><p class="project-kicker">Manufacturing documentation</p><h2>A two-sheet GD&amp;T and assembly package</h2><p>The detail sheet defines the bracket geometry and datum reference frame. The assembly sheet connects the component geometry to the BOM, exploded view, clearance requirement, and assembly sequence.</p></div>
+<div class="drawing-grid">
+<figure><img alt="Bracket manufacturing drawing with dimensions, datums, and feature control frames" decoding="async" height="1521" loading="lazy" src="../assets/images/actuator-bracket/drawing-sheet-1.webp" width="2150"/><figcaption>Sheet 1 — bracket manufacturing drawing and GD&amp;T.</figcaption></figure>
+<figure><img alt="Actuator bracket assembly drawing with exploded view, balloons, bill of materials, and section view" decoding="async" height="1521" loading="lazy" src="../assets/images/actuator-bracket/drawing-sheet-2.webp" width="2150"/><figcaption>Sheet 2 — assembly definition, BOM, balloons, and section A–A.</figcaption></figure>
+</div>
+</section>
+
+<section class="project-section downloads">
+<div class="section-heading-block"><p class="project-kicker">Project file</p><h2>Drawing package</h2></div>
+<div class="download-links">
+<a href="../assets/documents/actuator-bracket/Seyedmahdiar_Ziaolhagh_NX_Actuator_Bracket_GDT.pdf" rel="noopener" target="_blank"><span>Manufacturing and assembly drawings</span><b>Open PDF ↗</b></a>
+</div>
+</section>
+<aside class="credit-note"><h2>Project scope and authorship</h2><p>CAD modelling, component definition, assembly constraints, finite-element setup, result interpretation, manufacturing drawing, GD&amp;T, BOM, and assembly documentation were completed by <strong>Seyedmahdiar Ziaolhagh</strong> as an independent Siemens NX and Simcenter 3D portfolio project.</p></aside>
+</main>
+<footer class="site-footer project-footer">
+<div><strong>Seyedmahdiar Ziaolhagh</strong><span>·</span>Aerospace Engineer</div>
+<div class="footer-links"><a href="mailto:ziaolhagh@uleth.ca">Email</a><a href="https://www.linkedin.com/in/seyedmahdiar-ziaolhagh-1008a6b5/" rel="noopener noreferrer" target="_blank">LinkedIn</a><span>Lethbridge, AB, Canada</span></div>
+</footer>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="CAD-informed aileron actuator modelling and PID control study connecting CATIA V5 hinge-axis inertia with a constrained MATLAB/Simulink closed-loop model." name="description"/>
+<title>CAD-Informed Aileron Control | Seyedmahdiar Ziaolhagh</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<link href="../assets/css/project.css" rel="stylesheet"/>
+<link href="../assets/css/aileron-control.css" rel="stylesheet"/>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../assets/css/v8.css" rel="stylesheet"/>
+<meta content="#0b2035" name="theme-color"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="CAD-Informed Aileron Control | Seyedmahdiar Ziaolhagh" property="og:title"/>
+<meta content="CATIA V5 mass properties integrated into a constrained MATLAB/Simulink PID model for baseline and disturbance-response assessment." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="../assets/images/aileron-control/aileron-solid.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+</head>
+<body class="project-page aileron-control-page"><a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="../index.html">Seyedmahdiar Ziaolhagh</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span></button>
+<nav aria-label="Primary navigation" class="main-nav">
+<a href="../index.html">Home</a>
+<div class="nav-dropdown">
+<button aria-expanded="false" class="dropdown-toggle active-project" type="button">Projects <span>⌄</span></button>
+<div class="dropdown-menu">
+<a href="actuator-bracket.html"><small>Mechanical design · FEA · GD&amp;T</small>NX Actuator Bracket</a>
+<a href="catia-parametric-wing.html"><small>Knowledgeware · surfaces · sheet metal</small>CATIA Parametric Wing</a>
+<a href="aileron-control.html"><small>CATIA · Simulink · PID control</small>CAD-Informed Aileron Control</a>
+<a href="cryostat.html"><small>Cryogenic engineering</small>Three-Stage Cryostat</a>
+<a href="surface-profiler.html"><small>Precision metrology</small>Interferometric Surface Profiler</a>
+<a href="young-modulus.html"><small>Experimental mechanics</small>Vibration-Based Young's Modulus</a>
+<a href="asteroid-mining.html"><small>Space systems optimization</small>Asteroid Mining Optimization</a>
+<a href="undergraduate-projects.html"><small>Controls · guidance · design</small>Undergraduate Engineering Archive</a>
+</div>
+</div>
+<a href="../pages/research.html">Research</a>
+<a href="../pages/resume.html">Resume</a>
+<a href="../pages/about.html">About</a>
+<a href="../pages/contact.html">Contact</a>
+</nav>
+</header>
+
+<main id="main-content">
+<section class="project-hero aileron-hero" id="top">
+<div class="project-hero-copy">
+<a class="project-back" href="../index.html#selected-work">← Selected work</a>
+<p class="project-kicker">CAD-informed dynamics · actuator limits · PID control</p>
+<h1>Aircraft Aileron Actuator Modelling and Control</h1>
+<p class="project-lede">A reduced-order control-surface study linking CATIA V5 mass properties to a MATLAB/Simulink actuator model, then evaluating command tracking and disturbance rejection under physical angle, rate, and torque limits.</p>
+<dl class="project-facts">
+<div><dt>Role</dt><dd>Independent CAD and controls development</dd></div>
+<div><dt>Platforms</dt><dd>CATIA V5 · MATLAB R2020b · Simulink</dd></div>
+<div><dt>Controller</dt><dd>Continuous PIDF with anti-windup</dd></div>
+<div><dt>Deliverables</dt><dd>CAD properties · model · verification results</dd></div>
+</dl>
+</div>
+<figure class="project-hero-media aileron-hero-media">
+<img alt="Isolated CATIA solid model of the tapered aileron" decoding="async" fetchpriority="high" height="584" src="../assets/images/aileron-control/aileron-solid.webp" width="1056"/>
+<figcaption>Aluminium aileron solid extracted from the parametric wing.</figcaption>
+</figure>
+</section>
+
+<div class="status-strip"><strong>Scope</strong><span>CAD-informed reduced-order simulation. Damping, stiffness, actuator dynamics, and disturbance load are modelling assumptions; aerodynamic hinge-moment identification and hardware validation remain future work.</span></div>
+
+<section class="project-section split" id="overview">
+<div class="section-heading-block"><p class="project-kicker">Overview</p><h2>Connecting physical geometry to control-system behaviour</h2></div>
+<div class="project-copy">
+<p>The project began with a standalone rotational actuator model, including compliance, damping, first-order actuator dynamics, command shaping, and physical saturation. A filtered PID controller was tuned against explicit tracking requirements before the assumed inertia was replaced with a hinge-axis value calculated from the CATIA model.</p>
+<p>Running both inertia cases with identical controller settings isolates the influence of the CAD-derived property. The result is a traceable comparison rather than a disconnected CAD exercise and controls exercise.</p>
+</div>
+</section>
+
+<section class="project-section architecture" id="model">
+<div class="section-heading-block wide"><p class="project-kicker">Dynamic model</p><h2>A constrained closed loop built around rotational mechanics</h2><p>The mechanical plant balances actuator torque against disturbance, damping, and stiffness. Two integrators recover angular rate and position from angular acceleration.</p></div>
+<div class="equation-card" aria-label="Aileron rotational equation of motion">
+<span>Equation of motion</span>
+<strong>Jδ̈ + cδ̇ + kδ = T<sub>act</sub> − T<sub>dist</sub></strong>
+</div>
+<figure class="architecture-figure"><img alt="Simulink architecture for the closed-loop aileron actuator model" decoding="async" height="455" loading="lazy" src="../assets/images/aileron-control/simulink-architecture.webp" width="1079"/><figcaption>Closed-loop Simulink architecture with command limits, PIDF control, actuator dynamics, disturbance input, and mechanical feedback.</figcaption></figure>
+<div class="parameter-grid">
+<article><span>Controller</span><strong>K<sub>p</sub> 2.5 · K<sub>i</sub> 9 · K<sub>d</sub> 0.7</strong><p>Derivative-filter coefficient N = 50, with output saturation and clamping anti-windup.</p></article>
+<article><span>Actuator</span><strong>K<sub>a</sub> = 1 · τ<sub>a</sub> = 0.05 s</strong><p>First-order response with an 8 N·m torque limit.</p></article>
+<article><span>Surface limits</span><strong>±25° · 60°/s</strong><p>Position and command-rate constraints included directly in the loop.</p></article>
+</div>
+</section>
+
+<section class="project-section cad-link" id="cad-link">
+<div class="section-heading-block wide"><p class="project-kicker">CAD-to-controls link</p><h2>Hinge-axis inertia measured from the model—not inferred from a global axis</h2><p>The aileron was isolated between the inboard and outboard stations, split at the hinge line, assigned aluminium density, and measured about its actual rotation axis.</p></div>
+<div class="cad-link-grid">
+<figure><img alt="CATIA parametric wing showing the aileron construction and hinge cutting surface" decoding="async" height="634" loading="lazy" src="../assets/images/aileron-control/catia-wing-aileron-construction.webp" width="1320"/><figcaption>Associative aileron construction within the existing parametric wing.</figcaption></figure>
+<figure><img alt="CATIA Measure Inertia result for the aileron solid about the hinge line" decoding="async" height="1013" loading="lazy" src="../assets/images/aileron-control/catia-hinge-inertia.webp" width="1800"/><figcaption>Exact hinge-axis measurement: 0.307 kg mass and 2.183 × 10<sup>−4</sup> kg·m² rotational inertia.</figcaption></figure>
+</div>
+<div class="metric-band" aria-label="CAD-derived aileron properties">
+<div><span>Material</span><strong>Aluminium</strong></div>
+<div><span>Mass</span><strong>0.307 kg</strong></div>
+<div><span>Radius of gyration</span><strong>26.678 mm</strong></div>
+<div><span>Hinge inertia</span><strong>2.183 × 10<sup>−4</sup> kg·m²</strong></div>
+</div>
+</section>
+
+<section class="project-section results-section" id="tracking-results">
+<div class="section-heading-block wide"><p class="project-kicker">Command tracking</p><h2>All baseline requirements passed after the CAD update</h2><p>The controller was not retuned after replacing the assumed inertia. This preserves a direct comparison and tests whether the existing closed loop remains acceptable.</p></div>
+<div class="result-layout">
+<figure><img alt="Comparison of assumed-inertia and CAD-informed aileron command responses" decoding="async" height="1313" loading="lazy" src="../assets/images/aileron-control/inertia-comparison.webp" width="1750"/><figcaption>Fifteen-degree command response; the dotted line marks the 10% overshoot limit.</figcaption></figure>
+<div class="table-wrap"><table>
+<caption>Baseline response metrics</caption>
+<thead><tr><th scope="col">Metric</th><th scope="col">Assumed inertia</th><th scope="col">CAD inertia</th></tr></thead>
+<tbody>
+<tr><th scope="row">Rotational inertia</th><td>0.025 kg·m²</td><td>2.183 × 10<sup>−4</sup> kg·m²</td></tr>
+<tr><th scope="row">Peak angle</th><td>16.442°</td><td>15.240°</td></tr>
+<tr><th scope="row">Overshoot</th><td>9.610%</td><td>1.603%</td></tr>
+<tr><th scope="row">Rise time</th><td>0.101 s</td><td>0.537 s</td></tr>
+<tr><th scope="row">Settling time</th><td>0.860 s</td><td>0.948 s</td></tr>
+<tr><th scope="row">Steady-state error</th><td>−0.0001°</td><td>−0.0006°</td></tr>
+<tr class="pass-row"><th scope="row">Requirement result</th><td>PASS</td><td>PASS</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+
+<section class="project-section disturbance-section" id="disturbance-results">
+<div class="section-heading-block wide"><p class="project-kicker">Robustness characterization</p><h2>Response to a sustained 1.5 N·m opposing disturbance</h2><p>A step disturbance was applied at 2.0 s. No after-the-fact pass criterion was imposed; the test is reported as a comparative characterization of excursion and recovery.</p></div>
+<div class="result-layout reverse">
+<div class="table-wrap"><table>
+<caption>Disturbance-response metrics</caption>
+<thead><tr><th scope="col">Metric</th><th scope="col">Assumed inertia</th><th scope="col">CAD inertia</th></tr></thead>
+<tbody>
+<tr><th scope="row">Minimum angle</th><td>−3.219°</td><td>−0.371°</td></tr>
+<tr><th scope="row">Maximum angle</th><td>16.664°</td><td>16.492°</td></tr>
+<tr><th scope="row">Maximum deviation</th><td>18.219°</td><td>15.371°</td></tr>
+<tr><th scope="row">Time of maximum deviation</th><td>2.180 s</td><td>2.298 s</td></tr>
+<tr><th scope="row">Recovery time</th><td>2.026 s</td><td>2.120 s</td></tr>
+<tr><th scope="row">Final error at 5 s</th><td>0.1375°</td><td>0.1282°</td></tr>
+</tbody>
+</table></div>
+<figure><img alt="Comparison of assumed-inertia and CAD-informed disturbance rejection responses" decoding="async" height="1313" loading="lazy" src="../assets/images/aileron-control/disturbance-comparison.webp" width="1750"/><figcaption>The CAD-informed case reduced maximum deviation by 2.848°, while recovery time increased by 0.094 s.</figcaption></figure>
+</div>
+</section>
+
+<section class="project-section interpretation-section aileron-lessons" id="outcomes">
+<div class="section-heading-block"><p class="project-kicker">Engineering outcomes</p><h2>What the integrated study demonstrates</h2></div>
+<div class="interpretation-grid">
+<article><h3>Traceable multidisciplinary workflow</h3><ul><li>Associative aileron extraction from a parametric wing</li><li>Mass and inertia measured about the functional hinge axis</li><li>CAD property transferred into a dynamic control model</li><li>Same controller retained for controlled before-and-after comparison</li></ul></article>
+<article><h3>Verification discipline</h3><ul><li>Explicit command-tracking requirements</li><li>Angle, rate, and actuator-torque saturation</li><li>Filtered derivative and anti-windup treatment</li><li>Separate baseline and disturbance datasets</li></ul></article>
+</div>
+<aside class="analysis-note"><strong>Interpretation:</strong> replacing the initial inertia estimate reduced baseline overshoot from 9.610% to 1.603% and reduced the disturbance-test maximum deviation by 15.6%. The rate-limited CAD-informed response remained stable and passed all baseline requirements without controller retuning.</aside>
+</section>
+
+<section class="project-section downloads">
+<div class="section-heading-block"><p class="project-kicker">Project data</p><h2>Comparison datasets</h2></div>
+<div class="download-links">
+<a download href="../assets/documents/aileron-control/Aileron_Inertia_Comparison.csv"><span>Baseline inertia comparison</span><b>Download CSV ↓</b></a>
+<a download href="../assets/documents/aileron-control/Aileron_Disturbance_Comparison.csv"><span>Disturbance-response comparison</span><b>Download CSV ↓</b></a>
+</div>
+</section>
+
+<aside class="credit-note"><h2>Project scope and authorship</h2><p>CATIA aileron construction, hinge-axis mass-property extraction, MATLAB/Simulink architecture, PID implementation, test definition, and results analysis were completed by <strong>Seyedmahdiar Ziaolhagh</strong> as an independent aerospace controls portfolio project.</p></aside>
+</main>
+
+<footer class="site-footer project-footer">
+<div><strong>Seyedmahdiar Ziaolhagh</strong><span>·</span>Aerospace Engineer</div>
+<div class="footer-links"><a href="mailto:ziaolhagh@uleth.ca">Email</a><a href="https://www.linkedin.com/in/seyedmahdiar-ziaolhagh-1008a6b5/" rel="noopener noreferrer" target="_blank">LinkedIn</a><span>Lethbridge, AB, Canada</span></div>
+</footer>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

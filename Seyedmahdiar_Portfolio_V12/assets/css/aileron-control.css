@@ -1,0 +1,49 @@
+.aileron-control-page{--control-blue:#075ebc;--control-red:#db3326;--control-soft:#f4f7fa}
+.aileron-hero-media{background:linear-gradient(145deg,#292b57 0%,#484978 100%)}
+.aileron-hero-media img{width:92%;filter:drop-shadow(0 22px 30px rgba(2,8,25,.22))}
+.aileron-hero-media figcaption{color:#39404b}
+.equation-card{display:flex;align-items:center;justify-content:space-between;gap:30px;margin:0 0 34px;padding:24px 28px;background:#fff;border-left:3px solid var(--accent);box-shadow:0 10px 28px rgba(11,32,53,.06)}
+.equation-card span{font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+.equation-card strong{font-family:"IBM Plex Sans";font-size:24px;font-weight:500;color:var(--navy)}
+.architecture-figure{margin:0;background:#fff;border:1px solid var(--line)}
+.architecture-figure img{display:block;width:100%;height:auto;padding:22px}
+.architecture-figure figcaption,.cad-link-grid figcaption,.result-layout figcaption{font-size:12px;line-height:1.55;color:var(--muted);padding:0 20px 18px}
+.parameter-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-top:1px solid var(--line)}
+.parameter-grid article{padding:25px 25px 5px 0;margin-right:25px;border-right:1px solid var(--line)}
+.parameter-grid article:last-child{border:0;margin-right:0}
+.parameter-grid span,.metric-band span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:8px}
+.parameter-grid strong{font-family:"IBM Plex Sans";font-size:17px;font-weight:500;color:var(--navy)}
+.parameter-grid p{font-size:13px;line-height:1.65;color:var(--muted);margin:10px 0 0}
+.cad-link{background:#fff}
+.cad-link-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cad-link-grid figure{margin:0;border:1px solid var(--line);background:#f5f6f7;display:flex;flex-direction:column}
+.cad-link-grid img{display:block;width:100%;height:390px;object-fit:contain;padding:14px}
+.metric-band{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.metric-band div{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metric-band strong{font-family:"IBM Plex Sans";font-size:17px;font-weight:500;color:var(--navy)}
+.results-section{background:#fafbfb}
+.result-layout{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(360px,.72fr);gap:30px;align-items:start}
+.result-layout.reverse{grid-template-columns:minmax(360px,.72fr) minmax(0,1.28fr)}
+.result-layout figure{margin:0;background:#fff;border:1px solid var(--line)}
+.result-layout figure img{display:block;width:100%;height:auto;padding:10px}
+.table-wrap{overflow-x:auto;border-top:2px solid var(--navy)}
+.table-wrap table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
+.table-wrap caption{text-align:left;font-family:"IBM Plex Sans";font-size:18px;color:var(--navy);padding:18px 16px}
+.table-wrap th,.table-wrap td{text-align:left;padding:13px 15px;border-top:1px solid var(--line);vertical-align:top}
+.table-wrap thead th{font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);background:#f6f8f9}
+.table-wrap tbody th{font-weight:500;color:var(--navy)}
+.table-wrap tbody td{color:var(--muted)}
+.table-wrap .pass-row th,.table-wrap .pass-row td{color:#17613c;font-weight:600}
+.disturbance-section{background:#fff}
+.aileron-lessons{display:grid;grid-template-columns:32% 68%;gap:60px;background:#fafbfb}
+.aileron-lessons .interpretation-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.aileron-lessons .interpretation-grid article{border-top:2px solid var(--navy);padding-top:20px}
+.aileron-lessons .interpretation-grid article:last-child{border-color:var(--accent)}
+.aileron-lessons h3{font-family:"IBM Plex Sans";font-size:18px;font-weight:500;color:var(--navy);margin:0 0 12px}
+.aileron-lessons ul{padding-left:18px;margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+.aileron-lessons .analysis-note{grid-column:2;margin-top:8px;padding:20px 22px;border-left:3px solid var(--accent);background:#fff;font-size:13px;line-height:1.7;color:var(--muted)}
+.aileron-lessons .analysis-note strong{color:var(--navy)}
+.aileron-control-page .downloads{background:#fff}
+@media(max-width:1050px){.result-layout,.result-layout.reverse{grid-template-columns:1fr}.cad-link-grid img{height:330px}.metric-band{grid-template-columns:1fr 1fr}.aileron-lessons{grid-template-columns:1fr}.aileron-lessons .analysis-note{grid-column:1}}
+@media(max-width:760px){.equation-card{align-items:flex-start;flex-direction:column}.equation-card strong{font-size:20px}.architecture-figure img{padding:8px}.parameter-grid{grid-template-columns:1fr}.parameter-grid article{border-right:0;border-bottom:1px solid var(--line);padding:22px 0;margin:0}.cad-link-grid{grid-template-columns:1fr}.cad-link-grid img{height:auto;max-height:340px}.metric-band{grid-template-columns:1fr 1fr}.result-layout,.result-layout.reverse{display:flex;flex-direction:column}.result-layout.reverse figure{order:-1}.table-wrap{width:100%}.aileron-lessons{display:block}.aileron-lessons .interpretation-grid{grid-template-columns:1fr;margin-top:30px}}
+@media(max-width:420px){.metric-band{grid-template-columns:1fr}.table-wrap th,.table-wrap td{padding:11px 10px;font-size:12px}}

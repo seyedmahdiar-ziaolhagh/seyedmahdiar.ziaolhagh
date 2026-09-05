@@ -1,0 +1,3 @@
+Case,Inertia_kgm2,MinimumAngle_deg,MaximumAngle_deg,MaximumDeviation_deg,TimeMaximumDeviation_s,RecoveryTime_s,FinalAngle_deg,FinalError_deg
+Assumed inertia,0.025,-3.219,16.664,18.219,2.18,2.026,14.863,0.1375
+CAD-derived inertia,0.0002183,-0.371,16.492,15.371,2.298,2.12,14.872,0.1282
